@@ -21,7 +21,12 @@
         {
             wp_enqueue_style( 'bpp_css', plugins_url( '/styles/style.css', BPP_PLUGIN_FILE ), false, self::VERSION );
             wp_enqueue_script( 'bpp_js', plugins_url( '/scripts/script.js', BPP_PLUGIN_FILE ), array( 'jquery' ), self::VERSION );
-            wp_enqueue_script( 'bpp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
+
+            if(!self::loadAsync()){
+                wp_enqueue_script( 'bpp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
+            } else {
+                add_action( 'wp_footer', array(__CLASS__, 'async_script'));
+            }
         }
 
         /**
@@ -32,6 +37,28 @@
         public static function meta_nohover()
         {
             echo '<meta name="pinterest" content="nohover" />';
+        }
+
+        public static function async_script()
+        {
+            echo '<script type="text/javascript">';
+            echo "(function(d){
+                var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+                p.type = 'text/javascript';
+                p.async = true;
+                p.src = '//assets.pinterest.com/js/pinit.js';
+                f.parentNode.insertBefore(p, f);
+            }(document));
+            </script>";
+        }
+
+        public static function loadAsync()
+        {
+            if(get_option('bpp_loadasync') == 'true') {
+                return true;
+            }
+
+            return false;
         }
 
         public static function wrap_post_content( $content )

@@ -61,6 +61,7 @@
             register_setting( 'bpp-settings-group', 'bpp_size', 'intval' );
             register_setting( 'bpp-settings-group', 'bpp_lang' );
             register_setting( 'bpp-settings-group', 'bpp_count' );
+            register_setting( 'bpp-settings-group', 'bpp_loadasync' );
         }
 
 
@@ -73,6 +74,7 @@
             self::update_option('bpp_size', 20);
             self::update_option('bpp_lang', 'en');
             self::update_option('bpp_count', 'above');
+            self::update_option('bpp_loadasync', 'false');
         }
 
         public static function update_option($name, $value)
@@ -92,6 +94,7 @@
             delete_option('bpp_size');
             delete_option('bpp_lang');
             delete_option('bpp_count');
+            delete_option('bpp_loadasync');
         }
 
         /**
