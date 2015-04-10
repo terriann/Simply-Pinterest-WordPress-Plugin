@@ -10,7 +10,7 @@ This plugin strives to achieve that goal with the following guidelines
 - Additional assets will load asyncronously to avoid any performance concerns
 - The nopin="nopin" attribute will be explicitly respected. No questions asked
 - The plugin will work on the current stock Wordpress themes and Genesis Framework (standard, no child theme)
-- Instead of bloating the plugin  to support other themes we will use CSS and JS that a user is instructed to add to their theme
+- To avoid of bloating the plugin to support other themes/plugins we will use CSS and JS that a user is instructed to add to their theme as often as possible
 - Leave no footprint, when the plugin is deactivated it will remove all of it's options from the database
 
 This plugin will be free and open-source. Developers are welcome to contribute after the first release of the plugin. Any issues and bug reports should be filed in the [GitHub Issues](https://github.com/terriann/betterpinterestplugin/issues) for the project and documentation will eventually live in the [GitHub Wiki](https://github.com/terriann/betterpinterestplugin/wiki).
@@ -24,7 +24,7 @@ This plugin will not...
  *Tip* Uploading the file to your root web directiory bypasses Wordpress in a smart & safe way that will alleviate stress on Wordpress for performance purposes
 -  Ask for money or upsell a premium version
 - Provide support on an individual basis   
-  The developers will do their best to make this compatible with the most popular plugins and themes but will not copromise this plugin due to other developer's bad practices
+  The developers will do their best to make this compatible with the most popular plugins and themes but every Wordpress install is different. If you need heavy modifications you may need to hire a developer who can fork this plugin and release those modifitions under the GPL licensing.
 
 ##Plugin Description
 
@@ -32,7 +32,13 @@ A WordPress Pinterest sharing plugin. Perfect for DIY, craft, lifestyle &amp; ph
 
 What makes this a "better" Pinterest plugin? It's built by a web developer who crafts & blogs in her free time, that means she built this plugin to work for marketing Pinterst on her own products. Plus, it's free.  I could have charged $20 per download but I think open source code is neat and inspired by the fact that Pinterst open sources their stuff it seems like a good code gesture.
 
-#Goals
+##Plugins Supported
+
+### Lazy Load
+[BJ Lazy Load](https://wordpress.org/plugins/bj-lazy-load/) v.0.7.5 Supported
+[Lazy Load](https://wordpress.org/plugins/lazy-load/) v. 0.5 Suspected to be support
+
+##Goals
 
 * Release plugin in Wordpress Plugins Directory by June 2015
 

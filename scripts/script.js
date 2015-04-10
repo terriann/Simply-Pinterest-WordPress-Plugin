@@ -26,10 +26,19 @@ jQuery(document).ready(function() {
                 return;
             }
 
+
+            // Special hack for BJ Lazy Load
+            var bpp_mediasrc = jQuery(this).attr('src');
+            if(bpp_mediasrc != '' || bpp_mediasrc.substr(0, 5) == 'data:') {
+                if(jQuery(this).data('lazy-src')){
+                    bpp_mediasrc = jQuery(this).data('lazy-src');
+                }
+            }
+
             // Create the pinterest URI for this image
             var bpp_href  = '//www.pinterest.com/pin/create/button/';
                 bpp_href += '?url=' + encodeURI(bpp_pinlink);
-                bpp_href += '&media=' + encodeURI(jQuery(this).attr('src'));
+                bpp_href += '&media=' + encodeURI(bpp_mediasrc);
                 bpp_href += '&description=' + encodeURI(jQuery(this).attr('alt'));
 
             var bpp_button_wrap = jQuery('<span>')
