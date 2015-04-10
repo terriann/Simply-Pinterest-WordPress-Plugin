@@ -24,8 +24,8 @@ class Better_Pinterest_Plugin {
 
     public static function enqueue()
     {
-        wp_enqueue_style( 'bpp_css', plugins_url( 'style.css', __FILE__ ), false, self::VERSION );
-        wp_enqueue_script( 'bpp_js', plugins_url( 'script.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+        wp_enqueue_style( 'bpp_css', plugins_url( 'styles/style.css', __FILE__ ), false, self::VERSION );
+        wp_enqueue_script( 'bpp_js', plugins_url( 'scripts/script.js', __FILE__ ), array( 'jquery' ), self::VERSION );
         wp_enqueue_script( 'bpp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
     }
 
@@ -93,13 +93,13 @@ class Better_Pinterest_Plugin_Admin {
             // because in some cases such as /wp-admin/press-this.php the media
             // library isn't enqueued and shouldn't be. The script includes
             // safeguards to avoid errors in this situation
-            wp_enqueue_script( 'advanced-pinterest-settings', plugins_url( 'advanced-pinterest-settings.js', __FILE__ ), array( 'jquery' ), self::VERSION, true );
+            wp_enqueue_script( 'advanced-pinterest-settings', plugins_url( 'scripts/advanced-pinterest-settings.js', __FILE__ ), array( 'jquery' ), self::VERSION, true );
         }
     }
 
     public static function template()
     {
-        include dirname( __FILE__ ) . '/templates/advanced-pinterest-settings-tmpl.php';
+        include plugins_url( 'templates/advanced-pinterest-settings-tmpl.php' , __FILE__ );
     }
 
 }
@@ -217,7 +217,7 @@ function bpp_settings_page() {
         <th scope="row">Pin it Button Count</th>
         <td>
             <input type="radio" name="bpp_count" value="above"<?php checked( 'above' == get_option('bpp_count') ); ?> /> Above the button<br />
-            <input type="radio" name="bpp_count" value="beside"<?php checked( 'beside' == get_option('bpp_count') ); ?> /> Beside the button (<em>temporarily broken</em>)<br />
+            <input type="radio" name="bpp_count" value="beside"<?php checked( 'beside' == get_option('bpp_count') ); ?> /> Beside the button (<em>If count is 0 no numbers show, this is a bug on the Pinterest side, not the plugin</em>)<br />
             <input type="radio" name="bpp_count" value="none"<?php checked( 'none' == get_option('bpp_count') ); ?> /> None<br />
         </td>
         </tr>
