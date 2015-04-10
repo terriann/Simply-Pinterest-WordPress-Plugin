@@ -15,7 +15,7 @@ This is the part of the script that is used in the editor for advanced pinterest
 		advancedView = new AdvancedPinterestSettingsView( { model: view.model } );
 
 		view.on( 'post-render', function() {
-			view.views.insert( view.$el.find('.advanced-image'), advancedView.render().el );
+			view.views.insert( view.$el.find('.advanced-settings'), advancedView.render().el );
 		} );
 	}
 
@@ -47,7 +47,7 @@ This is the part of the script that is used in the editor for advanced pinterest
             console.log('model', model);
 
 		if ( nopin ) {
-            dom.setAttrib( image, 'nopin', nopin );
+            dom.setAttrib( image, 'nopin', 'nopin' );
 		} else {
             dom.setAttrib( image, 'nopin', null );
         }

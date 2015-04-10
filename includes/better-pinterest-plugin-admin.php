@@ -42,7 +42,7 @@
          */
         public static function template()
         {
-            include plugins_url( 'templates/advanced-pinterest-settings-tmpl.php' , dirname(__FILE__) );
+            include( plugin_dir_path( dirname(__FILE__) ) . 'templates/advanced-pinterest-settings-tmpl.php');
         }
 
         /**
