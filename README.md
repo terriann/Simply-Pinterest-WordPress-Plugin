@@ -11,6 +11,7 @@ This plugin strives to achieve that goal with the following guidelines
 - The nopin="nopin" attribute will be explicitly respected. No questions asked
 - The plugin will work on the current stock Wordpress themes and Genesis Framework (standard, no child theme)
 - Instead of bloating the plugin  to support other themes we will use CSS and JS that a user is instructed to add to their theme
+- Leave no footprint, when the plugin is deactivated it will remove all of it's options from the database
 
 This plugin will be free and open-source. Developers are welcome to contribute after the first release of the plugin. Any issues and bug reports should be filed in the [GitHub Issues](https://github.com/terriann/betterpinterestplugin/issues) for the project and documentation will eventually live in the [GitHub Wiki](https://github.com/terriann/betterpinterestplugin/wiki).
 
