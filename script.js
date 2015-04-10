@@ -81,3 +81,14 @@ jQuery(document).ready(function() {
     });
 // End on ready
 });
+
+/* konsole is a safe wrapper for the Firebug console. */
+var konsole = {
+  log: function(args){},
+  dir: function(args){}
+};
+// Remove below here when in production
+if (typeof window.console != 'undefined' && typeof window.console.log == 'function') {
+  konsole = window.console;
+  konsole.log("konsole initialized");
+}
