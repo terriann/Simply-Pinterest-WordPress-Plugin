@@ -13,6 +13,9 @@
             // Enqueue editor things - used in post.php and pages.php
             add_action( 'wp_enqueue_editor', array( __CLASS__, 'enqueue' ), 10, 1 );
             add_action( 'print_media_templates', array( __CLASS__, 'template' ) );
+
+            // Add settings link under plugin actions on plugins page
+            add_filter( 'plugin_action_links_' . plugin_basename(BPP_PLUGIN_FILE), array( __CLASS__, 'plugin_action_links') );
         }
 
         public static function init()
@@ -32,7 +35,7 @@
                 // because in some cases such as /wp-admin/press-this.php the media
                 // library isn't enqueued and shouldn't be. The script includes
                 // safeguards to avoid errors in this situation
-                wp_enqueue_script( 'advanced-pinterest-settings', plugins_url( 'scripts/advanced-pinterest-settings.js', dirname(__FILE__) ), array( 'jquery' ), self::VERSION, true );
+                wp_enqueue_script( 'advanced-pinterest-settings', plugins_url( 'scripts/advanced-pinterest-settings.js', BPP_PLUGIN_FILE), array( 'jquery' ), self::VERSION, true );
             }
         }
 
@@ -42,7 +45,7 @@
          */
         public static function template()
         {
-            include( plugin_dir_path( dirname(__FILE__) ) . 'templates/advanced-pinterest-settings-tmpl.php');
+            include( plugin_dir_path(BPP_PLUGIN_FILE) . 'templates/advanced-pinterest-settings-tmpl.php');
         }
 
         /**
@@ -102,5 +105,11 @@
 
         public static function settings_page() {
             include('settings-page.php');
+        }
+
+        public static function plugin_action_links( $links ) {
+           $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=settings_bpp') .'">Settings</a>';
+           $links[] = '<a href="https://github.com/terriann/betterpinterestplugin/wiki" target="_blank">Wiki</a>';
+           return $links;
         }
     }

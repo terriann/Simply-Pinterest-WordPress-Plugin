@@ -9,6 +9,7 @@ Author URI: http://terriswallow.com/
 License: GPLv2
 */
 
+define('BPP_PLUGIN_FILE', __FILE__);
 
 /**
  * Load & activate front end manipulation for front end facing site only

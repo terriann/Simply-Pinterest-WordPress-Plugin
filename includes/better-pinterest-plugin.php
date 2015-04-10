@@ -19,8 +19,8 @@
 
         public static function enqueue()
         {
-            wp_enqueue_style( 'bpp_css', plugins_url( '/styles/style.css', dirname(__FILE__) ), false, self::VERSION );
-            wp_enqueue_script( 'bpp_js', plugins_url( '/scripts/script.js', dirname(__FILE__) ), array( 'jquery' ), self::VERSION );
+            wp_enqueue_style( 'bpp_css', plugins_url( '/styles/style.css', BPP_PLUGIN_FILE ), false, self::VERSION );
+            wp_enqueue_script( 'bpp_js', plugins_url( '/scripts/script.js', BPP_PLUGIN_FILE ), array( 'jquery' ), self::VERSION );
             wp_enqueue_script( 'bpp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
         }
 
