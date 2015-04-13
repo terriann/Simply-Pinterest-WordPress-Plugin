@@ -22,9 +22,9 @@
             wp_enqueue_style( 'bpp_css', plugins_url( '/styles/style.css', BPP_PLUGIN_FILE ), false, self::VERSION );
             wp_enqueue_script( 'bpp_js', plugins_url( '/scripts/script.js', BPP_PLUGIN_FILE ), array( 'jquery' ), self::VERSION );
 
-            if(!self::loadAsync()){
+            if(self::loadSync()){
                 wp_enqueue_script( 'bpp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
-            } elseif(!self::loadSync()) {
+            } elseif(self::loadAsync()) {
                 add_action( 'wp_footer', array(__CLASS__, 'async_script'));
             }
         }
@@ -82,7 +82,8 @@
                     'data-bpp-lang' => esc_attr( get_option('bpp_lang') ),
                     'data-bpp-count' => esc_attr( get_option('bpp_count') ),
                     'data-bpp-size' => esc_attr( get_option('bpp_size') ),
-                    'data-bpp-color' => esc_attr( get_option('bpp_color') )
+                    'data-bpp-color' => esc_attr( get_option('bpp_color') ),
+                    'data-bpp-append' => esc_attr( get_option('bpp_description_append') )
                     );
 
             $attributes = array();

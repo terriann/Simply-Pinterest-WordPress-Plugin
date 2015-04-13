@@ -14,7 +14,11 @@ jQuery(document).ready(function() {
             bpp_count = $bpp_post.data('bpp-count'),
             bpp_pinhover = $bpp_post.data('bpp-pinhover'),
             bpp_pincorner = $bpp_post.data('bpp-pincorner'),
-            bpp_pinlink = $bpp_post.data('bpp-pinlink');
+            bpp_pinlink = $bpp_post.data('bpp-pinlink'),
+            bpp_append = $bpp_post.data('bpp-append');
+
+
+        bpp_append = (bpp_append && bpp_append.length > 0) ? ' ' + $bpp_post.data('bpp-append') : '';
 
         // Loop through each image in a post
         $bpp_post.find('img').each(function(){
@@ -40,7 +44,7 @@ jQuery(document).ready(function() {
             var bpp_href  = '//www.pinterest.com/pin/create/button/';
                 bpp_href += '?url=' + encodeURI(bpp_pinlink);
                 bpp_href += '&media=' + encodeURI(bpp_mediasrc);
-                bpp_href += '&description=' + encodeURI(jQuery(bpp_img).attr('alt'));
+                bpp_href += '&description=' + encodeURI(jQuery(bpp_img).attr('alt') + bpp_append);
 
             var bpp_button_wrap = jQuery('<span>')
                                   .addClass('bpp_button_wrapper');

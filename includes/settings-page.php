@@ -81,6 +81,17 @@
                         </fieldset>
                     </td>
                     </tr>
+                    
+                    <tr valign="top">
+                    <th scope="row">Append to description</th>
+                    <td>
+                        <p>If you have a string you'd like to always append to a Pin's description</p>
+                        <fieldset>
+                            <legend class="screen-reader-text"><span>End description with</span></legend>
+                            <label title="end of description"><input type="text" class="regular-text" name="bpp_description_append" value="<?php echo esc_attr(get_option('bpp_description_append')); ?>"></label>
+                        </fieldset>
+                    </td>
+                    </tr>
 
                     <tr valign="top">
                     <th scope="row">Load pinit.js Asyncronously?</th>
