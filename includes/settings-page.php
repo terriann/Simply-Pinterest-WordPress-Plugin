@@ -86,9 +86,10 @@
                     <th scope="row">Load pinit.js Asyncronously?</th>
                     <td>
                         <fieldset>
-                            <legend class="screen-reader-text"><span>Load pinit.js Asyncronously?</span></legend>
-                            <label title="Load Async"><input type="radio" name="bpp_loadasync" value="true"<?php checked( 'true' == get_option('bpp_loadasync') ); ?>> <span>Yes</span></label><br>
-                            <label title="Do not load Async"><input type="radio" name="bpp_loadasync" value="false"<?php checked( 'false' == get_option('bpp_loadasync') ); ?>> <span>No (default)</span></label><br>
+                            <legend class="screen-reader-text"><span>Loading </span></legend>
+                            <label title="Load Async"><input type="radio" name="bpp_load" value="async"<?php checked( 'async' == get_option('bpp_load') ); ?>> <span>Load pinit.js Asyncronously</span></label><br>
+                            <label title="Do not load Async"><input type="radio" name="bpp_load" value="sync"<?php checked( 'sync' == get_option('bpp_load') ); ?>> <span>Load pinit.js Syncronously? (default)</span></label><br>
+                            <label title="Do not load at all"><input type="radio" name="bpp_load" value="none"<?php checked( 'none' == get_option('bpp_load') ); ?>> <span>Do not load pinit.js (advanced setting; not recommended)</span></label><br>
                         </fieldset>
                     </td>
                     </tr>

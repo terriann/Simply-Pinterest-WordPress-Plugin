@@ -6,7 +6,7 @@
 
     class Better_Pinterest_Plugin_Admin {
 
-        const VERSION = '0.1';
+        const VERSION = '0.1.6';
 
         public static function admin_init()
         {
@@ -61,7 +61,7 @@
             register_setting( 'bpp-settings-group', 'bpp_size', 'intval' );
             register_setting( 'bpp-settings-group', 'bpp_lang' );
             register_setting( 'bpp-settings-group', 'bpp_count' );
-            register_setting( 'bpp-settings-group', 'bpp_loadasync' );
+            register_setting( 'bpp-settings-group', 'bpp_load' );
         }
 
 
@@ -74,7 +74,7 @@
             self::update_option('bpp_size', 20);
             self::update_option('bpp_lang', 'en');
             self::update_option('bpp_count', 'above');
-            self::update_option('bpp_loadasync', 'false');
+            self::update_option('bpp_load', 'sync');
         }
 
         public static function update_option($name, $value)
@@ -94,6 +94,9 @@
             delete_option('bpp_size');
             delete_option('bpp_lang');
             delete_option('bpp_count');
+            delete_option('bpp_load');
+
+            // @deprecated
             delete_option('bpp_loadasync');
         }
 

@@ -3,7 +3,7 @@
 Plugin Name: Better Pinterest Plugin
 Plugin URI: https://github.com/terriann/betterpinterestplugin
 Description: A better pinterest plugin.
-Version: 1.0
+Version: 0.1.6
 Author: Terri Ann Swallow
 Author URI: http://terriswallow.com/
 License: GPLv2
@@ -16,7 +16,6 @@ define('BPP_PLUGIN_FILE', __FILE__);
  */
 require_once( dirname(__FILE__) . '/includes/better-pinterest-plugin.php' );
 add_action( 'init', array( 'Better_Pinterest_Plugin', 'init' ) );
-
 
 
 /**

@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 
-    var version = '0.1.5';
+    var version = '0.1.6';
 
     // Loop through each post
     jQuery('.bpp_post_wrapper').each(function(){

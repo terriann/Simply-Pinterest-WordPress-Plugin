@@ -6,7 +6,7 @@
 
     class Better_Pinterest_Plugin {
 
-        const VERSION = '0.1';
+        const VERSION = '0.1.6';
 
         public static function init()
         {
@@ -24,7 +24,7 @@
 
             if(!self::loadAsync()){
                 wp_enqueue_script( 'bpp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
-            } else {
+            } elseif(!self::loadSync()) {
                 add_action( 'wp_footer', array(__CLASS__, 'async_script'));
             }
         }
@@ -54,7 +54,16 @@
 
         public static function loadAsync()
         {
-            if(get_option('bpp_loadasync') == 'true') {
+            if(get_option('bpp_load') == 'async') {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static function loadSync()
+        {
+            if(get_option('bpp_load') == 'sync') {
                 return true;
             }
 
