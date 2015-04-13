@@ -61,11 +61,6 @@ jQuery(document).ready(function() {
             var bpp_img_wrap_class = '';
 
             var _i_bpp_pinhover = jQuery(this).data('bpp-pinhover');
-            // If onhover setting is on set class
-            // 
-            // 
-            konsole.log('bpp_pinhover', bpp_pinhover);
-            konsole.log('_i_bpp_pinhover', _i_bpp_pinhover);
             if( (bpp_pinhover == true && _i_bpp_pinhover != 'always')
                 || _i_bpp_pinhover == 'onhover') {
                 bpp_img_wrap_class += " onhover";
