@@ -45,10 +45,9 @@ This is the part of the script that is used in the editor for advanced pinterest
             nopin = model.get('nopin'),
 			pinhover = model.get('pinhover');
 
-
-		if ( nopin ) {
+        if ( nopin ) {
             dom.setAttrib( image, 'nopin', 'nopin' );
-		} else {
+        } else {
             dom.setAttrib( image, 'nopin', null );
         }
         

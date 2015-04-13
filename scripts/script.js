@@ -19,18 +19,20 @@ jQuery(document).ready(function() {
         // Loop through each image in a post
         $bpp_post.find('img').each(function(){
 
+            var bpp_img = this;
+
             // Respect the no-pin
             // Exclude small images
-            if( jQuery(this).attr('nopin') === 'nopin'
-             || jQuery(this).get(0).clientWidth < 200) {
+            if( jQuery(bpp_img).attr('nopin') === 'nopin'
+             || jQuery(bpp_img).get(0).clientWidth < 200) {
                 return;
             }
 
             // Special hack for lazy load plugins
-            var bpp_mediasrc = jQuery(this).attr('src');
+            var bpp_mediasrc = jQuery(bpp_img).attr('src');
             if(bpp_mediasrc != '' || bpp_mediasrc.substr(0, 5) == 'data:') {
-                if(jQuery(this).data('lazy-src')){
-                    bpp_mediasrc = jQuery(this).data('lazy-src');
+                if(jQuery(bpp_img).data('lazy-src')){
+                    bpp_mediasrc = jQuery(bpp_img).data('lazy-src');
                 }
             }
 
@@ -38,7 +40,7 @@ jQuery(document).ready(function() {
             var bpp_href  = '//www.pinterest.com/pin/create/button/';
                 bpp_href += '?url=' + encodeURI(bpp_pinlink);
                 bpp_href += '&media=' + encodeURI(bpp_mediasrc);
-                bpp_href += '&description=' + encodeURI(jQuery(this).attr('alt'));
+                bpp_href += '&description=' + encodeURI(jQuery(bpp_img).attr('alt'));
 
             var bpp_button_wrap = jQuery('<span>')
                                   .addClass('bpp_button_wrapper');
@@ -60,7 +62,8 @@ jQuery(document).ready(function() {
             // Add miscelaneous classes to image wrapper
             var bpp_img_wrap_class = '';
 
-            var _i_bpp_pinhover = jQuery(this).data('bpp-pinhover');
+            // Ability to override hover settings on a per-image basis
+            var _i_bpp_pinhover = jQuery(bpp_img).data('bpp-pinhover');
             if( (bpp_pinhover == true && _i_bpp_pinhover != 'always')
                 || _i_bpp_pinhover == 'onhover') {
                 bpp_img_wrap_class += " onhover";
@@ -77,13 +80,23 @@ jQuery(document).ready(function() {
             bpp_img_wrap_class += " count_"+bpp_count;
 
             // Add wrapper and drop button after image
-            if(jQuery(this).parent('a').length > 0) {
-                jQuery(this).parent('a').wrap('<div class="bpp_img_wrapper' + bpp_img_wrap_class + '"></div>');
-                jQuery(this).parent('a').after(bpp_display);
+            if(jQuery(bpp_img).parent('a').length > 0) {
+                jQuery(bpp_img).parent('a').wrap('<span class="bpp_img_wrapper' + bpp_img_wrap_class + '"></span>');
+                jQuery(bpp_img).parent('a').after(bpp_display);
+                var bpp_parentparent = jQuery(bpp_img).parent('a').parent().parent().get(0);
             } else {
-                jQuery(this).wrap('<div class="bpp_img_wrapper' + bpp_img_wrap_class + '"></div>');
-                jQuery(this).after(bpp_display);
+                jQuery(bpp_img).wrap('<span class="bpp_img_wrapper' + bpp_img_wrap_class + '"></span>');
+                jQuery(bpp_img).after(bpp_display);
+                var bpp_parentparent = jQuery(bpp_img).parent().parent().get(0);
             }
+
+            var bpp_transferclass = ['alignnone', 'alignleft', 'aligncenter', 'alignright'];
+
+            jQuery.each( bpp_transferclass, function( key, value ) {
+                if(jQuery(bpp_img).hasClass(value)) {
+                    jQuery(bpp_parentparent).addClass(value);
+                }
+            });
 
         // End looping through each image in a post
         });
