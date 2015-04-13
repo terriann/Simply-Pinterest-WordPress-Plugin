@@ -117,5 +117,7 @@ var konsole = {
 // Remove below here when in production
 if (typeof window.console != 'undefined' && typeof window.console.log == 'function') {
   konsole = window.console;
-  konsole.log("konsole initialized");
+  function a(a,b){var c='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 15px;'+(a?"font-weight: bold;":"")+"color: "+b+";";return c}konsole.log("%c♥web%c( function(){ %creturn true %c}); --> %ccontactMe()",a(!0,"#d22"),a(!0,"#777"),a(!0,"#2b2"),a(!0,"#777"),a(!0,"#2b2"));
+  function contactMe(){ document.location.href = 'http://terriswallow.com' };
 }
+
