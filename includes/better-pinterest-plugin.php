@@ -89,6 +89,7 @@
         {
             global $post;
 
+            // Check page type allowed
             if(    (is_home() && !self::checkType('home'))
                 || (is_archive() && !self::checkType('archives'))
                 || (is_search() && !self::checkType('search'))
@@ -96,7 +97,12 @@
                 || (is_single() && !self::checkType('posts')) ) {
 
                 return $content;
-            } 
+            }
+
+            if( get_post_meta( $post->ID, 'bpp_disable_pinit', true ) ) {
+                return $content;
+            }
+
 
             $attr_set = array(
                     'class' => 'bpp_post_wrapper',

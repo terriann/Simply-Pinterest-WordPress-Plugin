@@ -16,6 +16,11 @@
 
             // Add settings link under plugin actions on plugins page
             add_filter( 'plugin_action_links_' . plugin_basename(BPP_PLUGIN_FILE), array( __CLASS__, 'plugin_action_links') );
+
+            // Adds sidebar metabox to disable bpp on a per post basis
+            add_action( 'add_meta_boxes', array( __CLASS__, 'add_meta_box' ) );
+            // Saves all metadata for quiltalongs
+            add_action( 'save_post', array( __CLASS__, 'save_meta_box_data' ) );
         }
 
         public static function init()
@@ -120,9 +125,98 @@
             include('settings-page.php');
         }
 
+        public static function meta_box($post) {
+            include('settings-metabox.php');
+        }
+
         public static function plugin_action_links( $links ) {
            $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=settings_bpp') .'">Settings</a>';
            $links[] = '<a href="https://github.com/terriann/betterpinterestplugin/wiki" target="_blank">Wiki</a>';
            return $links;
         }
+
+
+
+
+
+        // DAAAAAA Meta Boxes
+        
+
+        public static function add_meta_box()
+        {
+
+            $screens = array( 'post', 'page' );
+
+            foreach ( $screens as $screen ) {
+                add_meta_box(
+                    'bpp_metabox_config',
+                    __( 'Better Pinterest Settings'),
+                    array( __CLASS__, 'meta_box' ),
+                    $screen,
+                    'side'
+                );
+            }
+        }
+
+
+
+
+
+
+        /**
+         * When the post is saved, saves our custom data.
+         *
+         * @param int $post_id The ID of the post being saved.
+         */
+        public static function save_meta_box_data( $post_id ) {
+
+            /*
+             * We need to verify this came from our screen and with proper authorization,
+             * because the save_post action can be triggered at other times.
+             */
+
+            // Check if our nonce is set.
+            if ( ! isset( $_POST['bpp_meta_box_nonce'] ) ) {
+                return;
+            }
+
+            // Verify that the nonce is valid.
+            if ( ! wp_verify_nonce( $_POST['bpp_meta_box_nonce'], 'bpp_meta_box' ) ) {
+                return;
+            }
+
+            // If this is an autosave, our form has not been submitted, so we don't want to do anything.
+            if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+                return;
+            }
+
+            // Check the user's permissions.
+            if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+
+                if ( ! current_user_can( 'edit_page', $post_id ) ) {
+                    return;
+                }
+
+            } else {
+
+                if ( ! current_user_can( 'edit_post', $post_id ) ) {
+                    return;
+                }
+            }
+
+            /* OK, it's safe for us to save the data now. */
+            
+            // If it's not set then make sure there's no unnecessary post meta empty value hanging around
+            if ( ! isset( $_POST['bpp_disable_pinit'] ) ) {
+                delete_post_meta( $post_id, 'bpp_disable_pinit' );
+                return;
+            }
+
+            // Sanitize user input.
+            $value = sanitize_text_field( $_POST['bpp_disable_pinit'] );
+            // Update the meta field in the database.
+            update_post_meta( $post_id, 'bpp_disable_pinit', $value );
+        }
+
+
     }

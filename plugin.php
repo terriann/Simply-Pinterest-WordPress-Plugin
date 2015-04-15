@@ -20,6 +20,8 @@ add_action( 'init', array( 'Better_Pinterest_Plugin', 'init' ) );
 
 /**
  * Load & activate admin manipulation for admin site only
+ *
+ * @todo check if this should just be wrapped in is_admin() rather than relying on admin_init?
  */
 require_once( dirname(__FILE__) . '/includes/better-pinterest-plugin-admin.php' );
 add_action( 'admin_init', array( 'Better_Pinterest_Plugin_Admin', 'admin_init' ) );
