@@ -78,7 +78,7 @@
         public static function checkType($type) {
             $options = get_option('bpp_pagetype');
 
-            if(in_array($type, $options)) {
+            if(is_array($options) && in_array($type, $options)) {
                 return true;
             }
 

@@ -89,7 +89,10 @@
                             <legend class="screen-reader-text"><span>What Pages Types Should this Apply To</span></legend>
                             <?php
                                 // Needed only for serilialized array storage
-                                 $options = get_option('bpp_pagetype');
+                                $options = get_option('bpp_pagetype');
+                                if(!is_array($options)) {
+                                    $options = array();
+                                }
                             ?>
                             <label title="Posts"><input type="checkbox" name="bpp_pagetype[]" value="posts"<?php checked( in_array('posts', $options) ); ?>> <span>Posts</span></label><br>
                             <label title="Pages"><input type="checkbox" name="bpp_pagetype[]" value="pages"<?php checked( in_array('pages', $options) ); ?>> <span>Pages</span></label><br>
