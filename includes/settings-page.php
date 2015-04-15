@@ -81,6 +81,24 @@
                         </fieldset>
                     </td>
                     </tr>
+
+                    <tr valign="top">
+                    <th scope="row">What Pages Types Should this Apply To</th>
+                    <td>
+                        <fieldset>
+                            <legend class="screen-reader-text"><span>What Pages Types Should this Apply To</span></legend>
+                            <?php
+                                // Needed only for serilialized array storage
+                                 $options = get_option('bpp_pagetype');
+                            ?>
+                            <label title="Posts"><input type="checkbox" name="bpp_pagetype[]" value="posts"<?php checked( in_array('posts', $options) ); ?>> <span>Posts</span></label><br>
+                            <label title="Pages"><input type="checkbox" name="bpp_pagetype[]" value="pages"<?php checked( in_array('pages', $options) ); ?>> <span>Pages</span></label><br>
+                            <label title="Home"><input type="checkbox" name="bpp_pagetype[]" value="home"<?php checked( in_array('home', $options) ); ?>> <span>Home</span></label><br>
+                            <label title="Archives"><input type="checkbox" name="bpp_pagetype[]" value="archives"<?php checked( in_array('archives', $options) ); ?>> <span>Archives</span></label><br>
+                            <label title="Search"><input type="checkbox" name="bpp_pagetype[]" value="search"<?php checked( in_array('search', $options) ); ?>> <span>Search</span></label><br>
+                        </fieldset>
+                    </td>
+                    </tr>
                     
                     <tr valign="top">
                     <th scope="row">Append to description</th>

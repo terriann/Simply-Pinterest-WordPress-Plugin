@@ -13,7 +13,8 @@
             // Enqueue frontend things
             add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue' ), 10, 1 );
             add_action( 'wp_head', array( __CLASS__, 'meta_nohover' ) );
-            // Wrap the posts with the postwrapper class - JS is going to use a bunch of these data attributes
+            
+
             add_filter( 'the_content', array( __CLASS__, 'wrap_post_content' ) );
         }
 
@@ -70,9 +71,32 @@
             return false;
         }
 
+        /**
+         * Check to see if this is an allowed page type for the wrapper to go onto
+         * @return bool
+         */
+        public static function checkType($type) {
+            $options = get_option('bpp_pagetype');
+
+            if(in_array($type, $options)) {
+                return true;
+            }
+
+            return false;
+        }
+
         public static function wrap_post_content( $content )
         {
             global $post;
+
+            if(    (is_home() && !self::checkType('home'))
+                || (is_archive() && !self::checkType('archives'))
+                || (is_search() && !self::checkType('search'))
+                || (is_page() && !self::checkType('pages'))
+                || (is_single() && !self::checkType('posts')) ) {
+
+                return $content;
+            } 
 
             $attr_set = array(
                     'class' => 'bpp_post_wrapper',
