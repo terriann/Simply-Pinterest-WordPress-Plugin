@@ -14,8 +14,8 @@
     display: inline-block;
 }
 
-.bpp_post_wrapper .bpp_img_wrapper>img,
-.bpp_post_wrapper .bpp_img_wrapper>a>img {
+.bpp_post_wrapper .bpp_img_wrapper img,
+.bpp_post_wrapper .bpp_img_wrapper a img {
     margin:0;
     padding:0;
 }
