@@ -40,7 +40,7 @@ If you're looking for an easy way to pin images in your blog posts and pages, th
 
 1. Upload the `better-pinterest-plugin/` directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in your installation of WordPress
-1. Configure the settings in the menu under Settings > Better Pinterest plugin settings
+1. Configure the settings in the menu under Settings > Pinterest Settings
 
 == Frequently Asked Questions ==
 

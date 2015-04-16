@@ -2,8 +2,8 @@
 /*
 Plugin Name: Better Pinterest Plugin
 Plugin URI: https://github.com/terriann/betterpinterestplugin
-Description: A better pinterest plugin.
-Version: 0.1.6
+Description: Better Pinterest Plugin is a WordPress plugin designed to be light weight, easy to use while achieving one goal: making it easy for your visitors to share your content on Pinterest. This plugin puts a Pinterest button over the corner of each image with customizabele options making it clear & easy for your visitors to share your content with their followers.
+Version: 1
 Author: Terri Ann Swallow
 Author URI: http://terriswallow.com/
 License: GPLv2
@@ -11,6 +11,7 @@ License: GPLv2
 
 define('BPP_PLUGIN_FILE', __FILE__);
 
+require_once( dirname(__FILE__) . '/includes/better-pinterest-base.php' );
 /**
  * Load & activate front end manipulation for front end facing site only
  */
@@ -36,7 +37,7 @@ register_deactivation_hook( __FILE__, array( 'Better_Pinterest_Plugin_Admin', 's
 
 
 
-/* Combatting tinyMCE's hatreat of all things not typical 
+/* Combatting tinyMCE's hatreat of all things not typical
 https://vip.wordpress.com/documentation/register-additional-html-attributes-for-tinymce-and-wp-kses/
 https://www.leighton.com/blog/stop-tinymce-in-wordpress-3-x-messing-up-your-html-code
 */
@@ -59,10 +60,10 @@ add_action( 'init', 'kses_allow_nopin_on_img' );
 function kses_allow_nopin_on_img()
 {
     global $allowedposttags;
- 
+
     $tags = array( 'img' );
     $new_attributes = array( 'nopin' => true );
- 
+
     foreach( $tags as $tag ) {
         if( isset( $allowedposttags[ $tag ] ) && is_array( $allowedposttags[ $tag ] ) ) {
             $allowedposttags[ $tag ] = array_merge( $allowedposttags[ $tag ], $new_attributes );

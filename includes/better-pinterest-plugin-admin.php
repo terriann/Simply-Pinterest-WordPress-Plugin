@@ -4,9 +4,7 @@
      * Class that manages manipulation on the admin in wordpress
      */
 
-    class Better_Pinterest_Plugin_Admin {
-
-        const VERSION = '0.1.6';
+    class Better_Pinterest_Plugin_Admin  extends Better_Pinterest_Base {
 
         public static function admin_init()
         {
@@ -140,7 +138,7 @@
 
 
         // DAAAAAA Meta Boxes
-        
+
 
         public static function add_meta_box()
         {
@@ -205,7 +203,7 @@
             }
 
             /* OK, it's safe for us to save the data now. */
-            
+
             // If it's not set then make sure there's no unnecessary post meta empty value hanging around
             if ( ! isset( $_POST['bpp_disable_pinit'] ) ) {
                 delete_post_meta( $post_id, 'bpp_disable_pinit' );

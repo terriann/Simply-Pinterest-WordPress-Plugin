@@ -6,14 +6,12 @@
 
     class Better_Pinterest_Plugin {
 
-        const VERSION = '0.1.6';
-
         public static function init()
         {
             // Enqueue frontend things
             add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue' ), 10, 1 );
             add_action( 'wp_head', array( __CLASS__, 'meta_nohover' ) );
-            
+
 
             add_filter( 'the_content', array( __CLASS__, 'wrap_post_content' ) );
         }
