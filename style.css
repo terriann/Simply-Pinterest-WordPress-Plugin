@@ -3,6 +3,12 @@
     display: inline-block;
 }
 
+.bpp_post_wrapper .bpp_img_wrapper>img,
+.bpp_post_wrapper .bpp_img_wrapper>a>img {
+    margin:0;
+    padding:0;
+}
+
 /* Hide button when onhover only is set */
 .bpp_post_wrapper .bpp_img_wrapper.onhover .bpp_button_wrapper {
     display: none;
