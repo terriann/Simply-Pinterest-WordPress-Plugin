@@ -1,3 +1,14 @@
+.bpp_post_wrapper p.aligncenter {
+    text-align:center;
+}
+.bpp_post_wrapper p.alignleft,
+.bpp_post_wrapper p.alignnone {
+    text-align:left;
+}
+.bpp_post_wrapper p.alignright {
+    text-align:right;
+}
+
 .bpp_post_wrapper .bpp_img_wrapper {
     position: relative;
     display: inline-block;

@@ -15,7 +15,7 @@ This is the part of the script that is used in the editor for advanced pinterest
 		advancedView = new AdvancedPinterestSettingsView( { model: view.model } );
 
 		view.on( 'post-render', function() {
-			view.views.insert( view.$el.find('.advanced-image'), advancedView.render().el );
+			view.views.insert( view.$el.find('.advanced-settings'), advancedView.render().el );
 		} );
 	}
 
@@ -25,7 +25,8 @@ This is the part of the script that is used in the editor for advanced pinterest
 			attributes;
 
 		attributes = {
-			nopin: dom.getAttrib( image, 'nopin' )
+			nopin: dom.getAttrib( image, 'nopin' ),
+            pinhover: dom.getAttrib( image, 'data-bpp-pinhover')
 		};
 
 		options.metadata = _.extend( options.metadata, attributes );
@@ -41,15 +42,19 @@ This is the part of the script that is used in the editor for advanced pinterest
 			dom = editor.dom,
 			image  = options.image,
 			model = frame.content.get().model,
-			nopin = model.get('nopin');
+            nopin = model.get('nopin'),
+			pinhover = model.get('pinhover');
 
-            console.log('options', options);
-            console.log('model', model);
-
-		if ( nopin ) {
-            dom.setAttrib( image, 'nopin', nopin );
-		} else {
+        if ( nopin ) {
+            dom.setAttrib( image, 'nopin', 'nopin' );
+        } else {
             dom.setAttrib( image, 'nopin', null );
+        }
+        
+		if ( pinhover ) {
+            dom.setAttrib( image, 'data-bpp-pinhover', pinhover );
+		} else {
+            dom.setAttrib( image, 'data-bpp-pinhover', null );
         }
 
 	} );
