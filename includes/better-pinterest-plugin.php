@@ -4,7 +4,7 @@
      * Class that manages manipulation for the client facing side of Wordpress
      */
 
-    class Better_Pinterest_Plugin {
+    class Better_Pinterest_Plugin extends Better_Pinterest_Base {
 
         public static function init()
         {
@@ -19,7 +19,9 @@
         public static function enqueue()
         {
             wp_enqueue_style( 'bpp_css', plugins_url( '/styles/style.css', BPP_PLUGIN_FILE ), false, self::VERSION );
-            wp_enqueue_script( 'bpp_js', plugins_url( '/scripts/script.js', BPP_PLUGIN_FILE ), array( 'jquery' ), self::VERSION );
+            if(self::loadjQuery()){
+                wp_enqueue_script( 'bpp_js', plugins_url( '/scripts/script.js', BPP_PLUGIN_FILE ), array( 'jquery' ), self::VERSION );
+            }
 
             if(self::loadSync()){
                 wp_enqueue_script( 'bpp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
@@ -51,6 +53,14 @@
             </script>";
         }
 
+        public static function loadjQuery()
+        {
+            if(get_option('bpp_load_jq') === 'nojquery') {
+                return false;
+            }
+
+            return true;
+        }
         public static function loadAsync()
         {
             if(get_option('bpp_load') == 'async') {

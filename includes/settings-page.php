@@ -1,12 +1,12 @@
             <div class="wrap">
             <h2>Better Pinterest Plugin</h2>
 
-            <p>This plugin allows for the same options listed on the <a href="https://business.pinterest.com/en/widget-builder#do_pin_it_button" target="_Blank">Pinterest widget builder</a> page to be applied to all the images in your post unless otherwise specified.  We respect the <pre>nopin="nopin"</pre> attribute and will not show the button on an image smaller than 200px wide.</p>
-            <p>Pinterest recommends that your images be a minimum of 600px wide</p>
+            <p>This plugin allows for the same options listed on the <a href="https://business.pinterest.com/en/widget-builder#do_pin_it_button" target="_Blank">Pinterest widget builder</a> page to be applied to all the images in your post unless otherwise specified.  We respect the <code>nopin="nopin"</code> attribute and will not show the button on an image smaller than 200px wide.</p>
+            <p>Pinterest recommends that your images be a minimum of 600px wide.</p>
 
             <form method="post" action="options.php">
                 <?php
-                    // this outputs the 
+                    // this outputs the
                     settings_fields( 'bpp-settings-group' );
                     // This could be moved to a constructor once the plugin is class based
                     do_settings_sections( 'bpp-settings-group' );
@@ -45,7 +45,7 @@
                         </fieldset>
                     </td>
                     </tr>
-                     
+
                     <tr valign="top">
                     <th scope="row">Pin it Button Corner</th>
                     <td>
@@ -58,7 +58,7 @@
                         </fieldset>
                     </td>
                     </tr>
-                     
+
                     <tr valign="top">
                     <th scope="row">Pin it Button Count</th>
                     <td>
@@ -70,7 +70,7 @@
                         </fieldset>
                     </td>
                     </tr>
-                    
+
                     <tr valign="top">
                     <th scope="row">Hover Settings</th>
                     <td>
@@ -102,7 +102,7 @@
                         </fieldset>
                     </td>
                     </tr>
-                    
+
                     <tr valign="top">
                     <th scope="row">Append to description</th>
                     <td>
@@ -113,20 +113,35 @@
                         </fieldset>
                     </td>
                     </tr>
+                </table>
 
+                <h3>Advanced Settings</h3>
+
+                <table class="form-table">
                     <tr valign="top">
                     <th scope="row">Load pinit.js Asyncronously?</th>
                     <td>
                         <fieldset>
                             <legend class="screen-reader-text"><span>Loading </span></legend>
-                            <label title="Load Async"><input type="radio" name="bpp_load" value="async"<?php checked( 'async' == get_option('bpp_load') ); ?>> <span>Load pinit.js Asyncronously</span></label><br>
-                            <label title="Do not load Async"><input type="radio" name="bpp_load" value="sync"<?php checked( 'sync' == get_option('bpp_load') ); ?>> <span>Load pinit.js Syncronously? (default)</span></label><br>
+                            <label title="Load Async"><input type="radio" name="bpp_load" value="async"<?php checked( 'async' == get_option('bpp_load') ); ?>> <span>Load pinit.js Asyncronously  (default)</span></label><br>
+                            <label title="Do not load Async"><input type="radio" name="bpp_load" value="sync"<?php checked( 'sync' == get_option('bpp_load') ); ?>> <span>Load pinit.js Syncronously</span></label><br>
                             <label title="Do not load at all"><input type="radio" name="bpp_load" value="none"<?php checked( 'none' == get_option('bpp_load') ); ?>> <span>Do not load pinit.js (advanced setting; not recommended)</span></label><br>
                         </fieldset>
                     </td>
                     </tr>
+
+                    <tr valign="top">
+                    <th scope="row">Load jQuery?</th>
+                    <td>
+                        <p>In the unlikely case the version of jQuery we use conflicts with the version another plugin uses you may nee to disable jQuery from being loaded. Please only use this advanced setting if necessary</p>
+                        <fieldset>
+                            <legend class="screen-reader-text"><span>Loading jQuery</span></legend>
+                            <label title="Do Not Load jQuery"><input type="checkbox" name="bpp_load_jq" value="nojquery"<?php checked( 'nojquery' == get_option('bpp_load_jq') ); ?>> <span>Do not load jQuery (advanced setting; not recommended)</span></label><br>
+                        </fieldset>
+                    </td>
+                    </tr>
                 </table>
-                
+
                 <?php submit_button(); ?>
 
             </form>
