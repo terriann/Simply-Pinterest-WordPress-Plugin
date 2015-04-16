@@ -50,7 +50,7 @@ This is the part of the script that is used in the editor for advanced pinterest
         } else {
             dom.setAttrib( image, 'nopin', null );
         }
-        
+
 		if ( pinhover ) {
             dom.setAttrib( image, 'data-bpp-pinhover', pinhover );
 		} else {

@@ -46,7 +46,30 @@ function myformatTinyMCE($initArray) {
     $initArray['verify_html'] = false;
     return $initArray;
 }
-add_filter('tiny_mce_before_init', 'myformatTinyMCE' );
+//add_filter('tiny_mce_before_init', 'myformatTinyMCE' );
+
+/**
+ * Add to extended_valid_elements for TinyMCE
+ *
+ * @param $init assoc. array of TinyMCE options
+ * @return $init the changed assoc. array
+ */
+function change_mce_options( $init ) {
+ //code that adds additional attributes to the pre tag
+ $ext = "img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|id|style|nopin|data-bpp-pinhover]";
+
+ //if extended_valid_elements alreay exists, add to it
+ //otherwise, set the extended_valid_elements to $ext
+ if ( isset( $init['extended_valid_elements'] ) ) {
+  $init['extended_valid_elements'] .= ',' . $ext;
+ } else {
+  $init['extended_valid_elements'] = $ext;
+ }
+
+ //important: return $init!
+ return $init;
+}
+add_filter('tiny_mce_before_init', 'change_mce_options');
 
 
 
@@ -62,7 +85,7 @@ function kses_allow_nopin_on_img()
     global $allowedposttags;
 
     $tags = array( 'img' );
-    $new_attributes = array( 'nopin' => true );
+    $new_attributes = array( 'nopin' => true, 'data-bpp-pinhover' => true);
 
     foreach( $tags as $tag ) {
         if( isset( $allowedposttags[ $tag ] ) && is_array( $allowedposttags[ $tag ] ) ) {
