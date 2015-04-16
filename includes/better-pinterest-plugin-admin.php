@@ -80,7 +80,7 @@
             self::update_option('bpp_size', 20);
             self::update_option('bpp_lang', 'en');
             self::update_option('bpp_count', 'above');
-            self::update_option('bpp_load', 'sync');
+            self::update_option('bpp_load', 'async');
             self::update_option('bpp_load_jq', '');
             self::update_option('bpp_description_append', '');
             self::update_option('bpp_pagetype', array('posts','pages','home','archives'));
