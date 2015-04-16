@@ -1,65 +1,68 @@
-#Better Pinterst Plugin
+=== Plugin Name ===
+Contributors: terriann
+Donate link: http://terriswallow.com/
+Tags: pinterest, marketing, social media, button, click, hover, image, images, photo, photos, pin it, pinit, social
+Requires at least: 3.0.1
+Tested up to: 3.4
+Stable tag: 1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-What makes this a "better" Pinterest plugin? Well, it's built by a web developer who crafts & blogs in her free time, that means she built this plugin to work for marketing Pinterst on her own products. Plus, it's free.  I could have charged $20 per download but I think open source code is neat and inspired by the fact that Pinterst open sources their stuff it seems like a good code gesture.
+Better Pinterest Plugin is a WordPress plugin designed to be light weight, easy to use while achieving one goal: making it easy for your visitors to share your content on Pinterest.
 
-What's 
+== Description ==
 
+More and more bloggers are seeing success in traffic from Pinterest. We've even heard that for some bloggers Pinterest is beating out Google as their top referer. Make it easy and obvious your visitors should share your content.
 
-Make own pinterest plugin
+This plugin creates a prominent call to action over your each image in your post to prompt visitors to Pin your content. The window to save your content to their board is in a pop-up so they never leave your site.
+The button uses the default Pinterest button that users identify with sharing their favorite content across the web. It also includes the number of times that post has been shared which can help a popular post go viral by making it obvious to your users that other people love it too!
 
-https://business.pinterest.com/en/widget-builder#do_pin_it_button
+=== Battling Bad Source URLs ===
 
-I purchased a pinterest plugin and was almost immediately disappointed in it so I did what I should have done from the beginning, I built my own.
+Even when the Pinterest button is triggered from your home page, search or archives the Pin is credited to the permalink page of your content automatically. This way the traffic comes to the page they were looking for straight from Pinterest.
 
-1. Wrap each post with a .bpp_pinwrapper class
-	- Use data-bpp-pinlink="" to ensure pin attributes to permalink page
-	- Use data-bpp-pincorner="" for default corner (top right)
-	- Use data-bpp-pinhover="false" to always show
-2. Add JS to catch all images > 200px and add a Pinterest button to em w/ correct overlay
-	- Use attributes from above!
-    - Use ALT tag on image for description
-3. Make settings page for defaults
-    - Use data-bpp-pindescription="" attr w/ SEO setting (Genesis & Yoast & allinone SEO support)
-	- default pincorner settings"northeast|northeast|southeast|southwest"
-	- default show pin on hover/offhover
-4. Make configuration for editing images already in post
-	- nopin="nopin" attribute
-	- data-bpp-pincorner="northeast|northeast|southeast|southwest" attribute
-	- Setting for data-bpp-onhover="" (will override default)
+=== Customize Settings ====
 
-What I didn't like about the other Pinterest button:
+This plugin does the following:
 
-- It overlapped poorly and had a negative impact on my layout - it shifted things and offset stuff and that wasn't what I was looking for, their demos didn't do that but in all cases even with other plugins disabled I still had issues.
-- It injected markup into my post...gross, this should all be done with javascript as much as possible to make it portable. To me this was a sign of an amateur developer
-- It was a $20 plugin that I paid for and was upset with, I'd rather spend time making a free one that works...
-- They used !important in their style sheet. Again a sign of an armature developer, just tightly define your definitions; if someone wants to override the styles in their theme they should be able to!!
+* Choose whether to show the Pin it button when a user hovers over your images or always. You can even customize this on specific images too!
+* Lets you to customize the Pin it button color between Pinterest red, white & gray
+* Allows you to choose the button size (small or large) & position of the count bubble
+* Respects the same `no-pin="nopin"` attribute for your image tags, the same convention Pinterest uses, making it easy to prevent images you don't want Pinned from being Pinned
+* Customize what page types the button displays on, choose home page, posts, pages, archives and search
+* Further control letting you prevent a specific page or post from having the pin it button over the images
+* Detailed control letting you prevent individual images from having the Pin it button over it
+* Uses the permalink to credit your content even from the home page, archives and search!
 
+If you're looking for an easy way to pin images in your blog posts and pages, this plugin will help you with that. It highlights images and adds a "Pin it" button over them once the user hovers his mouse over an image. Once the user clicks the "Pin it" button, the plugin shows a pop-up window with the image and a description. Everything is ready for pinning, although the user can alter the description.
 
+== Installation ==
 
-<a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above" data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
-<!-- Please call pinit.js only once per page -->
-<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+1. Upload the `better-pinterest-plugin/` directory to the `/wp-content/plugins/` directory
+1. Activate the plugin through the 'Plugins' menu in your installation of WordPress
+1. Configure the settings in the menu under Settings > Better Pinterest plugin settings
 
+== Frequently Asked Questions ==
 
-<a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
-<!-- Please call pinit.js only once per page -->
-<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+= Can I Customize the Button =
 
-Good post on preventing pinning entirely
-https://help.pinterest.com/en/articles/prevent-pinning-your-site
+No, to keep the plugin light and easy to use we only support the default Pinterest branded buttons. Pinterest has put their design resources into what works well to get users to click that "Pin It" button and it really stands out to the user that they should pin the great images you have in your post to come back to your content and share it with their followers.
 
-Extension FAQ
-https://developers.pinterest.com/extension_faq/
+If you want a more subtle appraoch try setting the button to only show on hover and have it permenantly display on the most Pinnable buttons!
 
-Might be useful to check out:
-https://www.addtoany.com/buttons/customize/pinterest_pin_it_button
+= How can I change the Pinterst Description =
 
+When you upload an image through WordPress you are prompted to add a "description" in the media upload window. That is that text this plugin uses to pre-fill the pin's description
 
+== Screenshots ==
 
-Future settings:
-- Large button
-- Number on the site (no number) and CSS to adjust
+1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
+the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
+directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
+(or jpg, jpeg, gif).
+2. This is the second screen shot
 
-Other Todos:
-- Sanitize/validate input
-- Set default values on initializing the plugin
+== Changelog ==
+
+= 1.0 =
+Initial release
