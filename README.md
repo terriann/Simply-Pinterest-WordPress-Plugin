@@ -4,7 +4,7 @@ The better Pinterset plugin is designed to be as light weight as possible while 
 
 This plugin strives to achieve that goal with the following guidelines
 
-- CSS will never use !important; it should be easy for a user to overwrite the plugin's styles if necessary but the plugin should overwire some of the theme styles to prevent mis-placement of the button
+- CSS will only use !important; when set in the configuration. By default it should be easy for a user to overwrite the plugin's styles but to make sure it's easy for users to retain their images' center alignment we'll make it an advanced configuration
 - Minimal PHP manipulation to the page
 - Using jQuery to manipulate the DOM to add any necessary markup
 - Additional assets will load asyncronously for page performance optimizations
@@ -58,6 +58,10 @@ The better pinterest plugin is not compatible with some plugins by design. These
 ##License
 
 Better Pinterest Plugin is free software, and is released under the terms of the [GPL version 2 license](http://www.gnu.org/licenses/gpl-2.0.html).
+
+## Release Notes & FAQ
+
+Release notes and FAQs are availiable in the `readme.txt` (used by WordPress's plugin repo)
 
 ##Credits
 
