@@ -131,6 +131,17 @@
                     </tr>
 
                     <tr valign="top">
+                    <th scope="row">!important in CSS?
+                    <td>
+                        <p>If your center aligned images all end up on the left after you enable the plugin, check this box to fix it.</p></th>
+                        <fieldset>
+                            <legend class="screen-reader-text"><span>Use CSS classes with !important</span></legend>
+                            <label title="Use CSS classes with !important"><input type="checkbox" name="bpp_important" value="important"<?php checked( 'important' == get_option('bpp_important') ); ?>> <span>Use CSS classes with !important (recommended only if image alignemnt is wrong after install)</span></label><br>
+                        </fieldset>
+                    </td>
+                    </tr>
+
+                    <tr valign="top">
                     <th scope="row">Load jQuery?</th>
                     <td>
                         <p>In the unlikely case the version of jQuery we use conflicts with the version another plugin uses you may nee to disable jQuery from being loaded. Please only use this advanced setting if necessary</p>

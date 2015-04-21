@@ -68,6 +68,7 @@
             register_setting( 'bpp-settings-group', 'bpp_load_jq' );
             register_setting( 'bpp-settings-group', 'bpp_description_append', 'trim' );
             register_setting( 'bpp-settings-group', 'bpp_pagetype' );
+            register_setting( 'bpp-settings-group', 'bpp_important' );
         }
 
 
@@ -84,6 +85,7 @@
             self::update_option('bpp_load_jq', '');
             self::update_option('bpp_description_append', '');
             self::update_option('bpp_pagetype', array('posts','pages','home','archives'));
+            self::update_option('bpp_important', '');
         }
 
         public static function update_option($name, $value)
@@ -107,6 +109,7 @@
             delete_option('bpp_load_jq');
             delete_option('bpp_description_append');
             delete_option('bpp_pagetype');
+            delete_option('bpp_important');
 
             // @deprecated
             delete_option('bpp_description_end');

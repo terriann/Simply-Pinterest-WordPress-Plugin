@@ -15,7 +15,8 @@ jQuery(document).ready(function() {
             bpp_pinhover = $bpp_post.data('bpp-pinhover'),
             bpp_pincorner = $bpp_post.data('bpp-pincorner'),
             bpp_pinlink = $bpp_post.data('bpp-pinlink'),
-            bpp_append = $bpp_post.data('bpp-append');
+            bpp_append = $bpp_post.data('bpp-append'),
+            bpp_important = $bpp_post.data('bpp-important');
 
 
         bpp_append = (bpp_append && bpp_append.length > 0) ? ' ' + $bpp_post.data('bpp-append') : '';
@@ -98,6 +99,9 @@ jQuery(document).ready(function() {
 
             jQuery.each( bpp_transferclass, function( key, value ) {
                 if(jQuery(bpp_img).hasClass(value)) {
+                    if(bpp_important){
+                        jQuery(bpp_parentparent).addClass('bpp_imp');
+                    }
                     jQuery(bpp_parentparent).addClass(value);
                 }
             });

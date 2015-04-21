@@ -124,6 +124,10 @@
                     'data-bpp-append' => esc_attr( get_option('bpp_description_append') )
                     );
 
+            if('important' == get_option('bpp_important')) {
+                $attr_set['data-bpp-important'] = '1';
+            }
+
             $attributes = array();
 
             foreach($attr_set as $attr => $value) {

@@ -9,6 +9,17 @@
     text-align:right;
 }
 
+.bpp_post_wrapper p.aligncenter.bpp_imp {
+    text-align:center !important;
+}
+.bpp_post_wrapper p.alignleft.bpp_imp,
+.bpp_post_wrapper p.alignnone.bpp_imp {
+    text-align:left !important;
+}
+.bpp_post_wrapper p.alignright.bpp_imp {
+    text-align:right !important;
+}
+
 .bpp_post_wrapper .bpp_img_wrapper {
     position: relative;
     display: inline-block;
