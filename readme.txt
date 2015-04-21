@@ -64,8 +64,8 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
-= 1.0 =
+= v1.0-rc.1 =
 Initial release
 
-= 1.0.1 =
+= v1.0-rc.2 =
 Add configuration to use !important CSS when necessary due to conflicts with other plugins/themes
