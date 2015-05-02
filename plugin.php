@@ -1,22 +1,22 @@
 <?php
 /*
-Plugin Name: Better Pinterest Plugin
+Plugin Name: Simple Pinterest Plugin
 Plugin URI: https://github.com/terriann/betterpinterestplugin
-Description: Better Pinterest Plugin is a WordPress plugin designed to be light weight, easy to use while achieving one goal: making it easy for your visitors to share your content on Pinterest. This plugin puts a Pinterest button over the corner of each image with customizabele options making it clear & easy for your visitors to share your content with their followers.
+Description: Simple Pinterest Plugin is a WordPress plugin designed to be light weight, easy to use while achieving one goal: making it easy for your visitors to share your content on Pinterest. This plugin puts a Pinterest button over the corner of each image with customizabele options making it clear & easy for your visitors to share your content with their followers.
 Version: 1.0.2
 Author: Terri Ann Swallow
 Author URI: http://terriswallow.com/
 License: GPLv2
 */
 
-define('BPP_PLUGIN_FILE', __FILE__);
+define('SPP_PLUGIN_FILE', __FILE__);
 
-require_once( dirname(__FILE__) . '/includes/better-pinterest-base.php' );
+require_once( dirname(__FILE__) . '/includes/simple-pinterest-base.php' );
 /**
  * Load & activate front end manipulation for front end facing site only
  */
-require_once( dirname(__FILE__) . '/includes/better-pinterest-plugin.php' );
-add_action( 'init', array( 'Better_Pinterest_Plugin', 'init' ) );
+require_once( dirname(__FILE__) . '/includes/simple-pinterest-plugin.php' );
+add_action( 'init', array( 'Simple_Pinterest_Plugin', 'init' ) );
 
 
 /**
@@ -24,16 +24,16 @@ add_action( 'init', array( 'Better_Pinterest_Plugin', 'init' ) );
  *
  * @todo check if this should just be wrapped in is_admin() rather than relying on admin_init?
  */
-require_once( dirname(__FILE__) . '/includes/better-pinterest-plugin-admin.php' );
-add_action( 'admin_init', array( 'Better_Pinterest_Plugin_Admin', 'admin_init' ) );
+require_once( dirname(__FILE__) . '/includes/simple-pinterest-plugin-admin.php' );
+add_action( 'admin_init', array( 'Simple_Pinterest_Plugin_Admin', 'admin_init' ) );
 
 // Some things apparently need to be called on init not admin_init....Grrr wordpress
-add_action('init', array( 'Better_Pinterest_Plugin_Admin', 'init' ) );
+add_action('init', array( 'Simple_Pinterest_Plugin_Admin', 'init' ) );
 
 // When the plugin is activated, set defaults
-register_activation_hook( __FILE__, array( 'Better_Pinterest_Plugin_Admin', 'settings_default' ) );
+register_activation_hook( __FILE__, array( 'Simple_Pinterest_Plugin_Admin', 'settings_default' ) );
 // When the plugin is deactivated, remove options from database
-register_deactivation_hook( __FILE__, array( 'Better_Pinterest_Plugin_Admin', 'settings_remove' ) );
+register_deactivation_hook( __FILE__, array( 'Simple_Pinterest_Plugin_Admin', 'settings_remove' ) );
 
 
 
@@ -56,7 +56,7 @@ function myformatTinyMCE($initArray) {
  */
 function change_mce_options( $init ) {
  //code that adds additional attributes to the pre tag
- $ext = "img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|id|style|nopin|data-bpp-pinhover]";
+ $ext = "img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|id|style|nopin|data-spp-pinhover]";
 
  //if extended_valid_elements alreay exists, add to it
  //otherwise, set the extended_valid_elements to $ext
@@ -85,7 +85,7 @@ function kses_allow_nopin_on_img()
     global $allowedposttags;
 
     $tags = array( 'img' );
-    $new_attributes = array( 'nopin' => true, 'data-bpp-pinhover' => true);
+    $new_attributes = array( 'nopin' => true, 'data-spp-pinhover' => true);
 
     foreach( $tags as $tag ) {
         if( isset( $allowedposttags[ $tag ] ) && is_array( $allowedposttags[ $tag ] ) ) {

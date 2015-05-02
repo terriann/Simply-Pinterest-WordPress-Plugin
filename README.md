@@ -1,6 +1,6 @@
-# Better Pinterest Plugin
+# Simple Pinterest Plugin
 
-The better Pinterset plugin is designed to be as light weight as possible while achieving one goal: making it easy for your visitors to share your content on interest.
+The Simple Pinterset plugin is designed to be as light weight as possible while achieving one goal: making it easy for your visitors to share your content on interest.
 
 This plugin strives to achieve that goal with the following guidelines
 
@@ -13,7 +13,7 @@ This plugin strives to achieve that goal with the following guidelines
 -  Avoid bloating the plugin with unnecessary features
 - Leave no footprint, when the plugin is deactivated it will remove all of it's options from the database.
 
-This plugin will be free and open-source. Developers are welcome to contribute after the first release of the plugin. Any issues and bug reports should be filed in the [GitHub Issues](https://github.com/terriann/betterpinterestplugin/issues) for the project and documentation will eventually live in the [GitHub Wiki](https://github.com/terriann/betterpinterestplugin/wiki).
+This plugin will be free and open-source. Developers are welcome to contribute after the first release of the plugin. Any issues and bug reports should be filed in the [GitHub Issues](https://github.com/terriann/simplepinterestplugin/issues) for the project and documentation will eventually live in the [GitHub Wiki](https://github.com/terriann/simplepinterestplugin/wiki).
 
 ##What this Plugin will NOT do
 
@@ -30,7 +30,7 @@ This plugin will not...
 
 A WordPress Pinterest sharing plugin. Perfect for DIY, craft, lifestyle &amp; photography blogs to promote your content easily with just the right bells &amp; whistles. It will overlay a Pinterest branded over the images in your content with the ability to customise how, when and where the buttn shows up.  With a bubble showing how many times a post has been shared your popular posts will stand our with a higher viral success rate!
 
-What makes this a "better" Pinterest plugin? It's built by a web developer who crafts & blogs in her free time, that means she built this plugin to work for marketing Pinterst on her own content. It's no frills and easy to setup and doesn't require you to change the way you write and publish your posts. Plus, it's free.
+What makes this a "simple" Pinterest plugin? It's built by a web developer who crafts & blogs in her free time, that means she built this plugin to work for marketing Pinterst on her own content. It's no frills and easy to setup and doesn't require you to change the way you write and publish your posts. Plus, it's free.
 
 ##Plugins Supported
 We would like to strive to support all the major plugins but the code should be specifically tested on an instalation using the following plugins:
@@ -46,7 +46,7 @@ We would like to strive to support all the major plugins but the code should be 
 * Non tested at this time
 
 ##Not Compatible
-The better pinterest plugin is not compatible with some plugins by design. These plugins serve a completely different purpose while cluttering up the image. Inorder to avoid conflicts this plugin will be disabled if it detects the following plugins are active:
+The Simple Pinterest Plugin is not compatible with some plugins by design. These plugins serve a completely different purpose while cluttering up the image. Inorder to avoid conflicts this plugin will be disabled if it detects the following plugins are active:
 
 * None at this time
 

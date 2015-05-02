@@ -4,7 +4,7 @@
      * Class that manages manipulation for the client facing side of Wordpress
      */
 
-    class Better_Pinterest_Plugin extends Better_Pinterest_Base {
+    class Simple_Pinterest_Plugin extends Simple_Pinterest_Base {
 
         public static function init()
         {
@@ -18,13 +18,13 @@
 
         public static function enqueue()
         {
-            wp_enqueue_style( 'bpp_css', plugins_url( '/styles/style.css', BPP_PLUGIN_FILE ), false, self::VERSION );
+            wp_enqueue_style( 'spp_css', plugins_url( '/styles/style.css', SPP_PLUGIN_FILE ), false, self::VERSION );
             if(self::loadjQuery()){
-                wp_enqueue_script( 'bpp_js', plugins_url( '/scripts/script.js', BPP_PLUGIN_FILE ), array( 'jquery' ), self::VERSION );
+                wp_enqueue_script( 'spp_js', plugins_url( '/scripts/script.js', SPP_PLUGIN_FILE ), array( 'jquery' ), self::VERSION );
             }
 
             if(self::loadSync()){
-                wp_enqueue_script( 'bpp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
+                wp_enqueue_script( 'spp_pinit', '//assets.pinterest.com/js/pinit.js', false, self::VERSION );
             } elseif(self::loadAsync()) {
                 add_action( 'wp_footer', array(__CLASS__, 'async_script'));
             }
@@ -55,7 +55,7 @@
 
         public static function loadjQuery()
         {
-            if(get_option('bpp_load_jq') === 'nojquery') {
+            if(get_option('spp_load_jq') === 'nojquery') {
                 return false;
             }
 
@@ -63,7 +63,7 @@
         }
         public static function loadAsync()
         {
-            if(get_option('bpp_load') == 'async') {
+            if(get_option('spp_load') == 'async') {
                 return true;
             }
 
@@ -72,7 +72,7 @@
 
         public static function loadSync()
         {
-            if(get_option('bpp_load') == 'sync') {
+            if(get_option('spp_load') == 'sync') {
                 return true;
             }
 
@@ -84,7 +84,7 @@
          * @return bool
          */
         public static function checkType($type) {
-            $options = get_option('bpp_pagetype');
+            $options = get_option('spp_pagetype');
 
             if(is_array($options) && in_array($type, $options)) {
                 return true;
@@ -107,25 +107,25 @@
                 return $content;
             }
 
-            if( get_post_meta( $post->ID, 'bpp_disable_pinit', true ) ) {
+            if( get_post_meta( $post->ID, 'spp_disable_pinit', true ) ) {
                 return $content;
             }
 
 
             $attr_set = array(
-                    'class' => 'bpp_post_wrapper',
-                    'data-bpp-pinlink' => esc_attr( get_permalink($post->ID) ),
-                    'data-bpp-pincorner' => esc_attr( get_option('bpp_corner') ),
-                    'data-bpp-pinhover' => esc_attr( get_option('bpp_onhover') ),
-                    'data-bpp-lang' => esc_attr( get_option('bpp_lang') ),
-                    'data-bpp-count' => esc_attr( get_option('bpp_count') ),
-                    'data-bpp-size' => esc_attr( get_option('bpp_size') ),
-                    'data-bpp-color' => esc_attr( get_option('bpp_color') ),
-                    'data-bpp-append' => esc_attr( get_option('bpp_description_append') )
+                    'class' => 'spp_post_wrapper',
+                    'data-spp-pinlink' => esc_attr( get_permalink($post->ID) ),
+                    'data-spp-pincorner' => esc_attr( get_option('spp_corner') ),
+                    'data-spp-pinhover' => esc_attr( get_option('spp_onhover') ),
+                    'data-spp-lang' => esc_attr( get_option('spp_lang') ),
+                    'data-spp-count' => esc_attr( get_option('spp_count') ),
+                    'data-spp-size' => esc_attr( get_option('spp_size') ),
+                    'data-spp-color' => esc_attr( get_option('spp_color') ),
+                    'data-spp-append' => esc_attr( get_option('spp_description_append') )
                     );
 
-            if('important' == get_option('bpp_important')) {
-                $attr_set['data-bpp-important'] = '1';
+            if('important' == get_option('spp_important')) {
+                $attr_set['data-spp-important'] = '1';
             }
 
             $attributes = array();

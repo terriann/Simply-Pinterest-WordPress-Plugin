@@ -3,7 +3,7 @@
 /**
  * Base class to handle common functionality
  */
-    class Better_Pinterest_Base {
+    class Simple_Pinterest_Base {
 
-        const VERSION = '1.0.2';
+        const VERSION = '1.0.3';
     }

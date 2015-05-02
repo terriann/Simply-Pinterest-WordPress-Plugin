@@ -4,7 +4,7 @@
      * Class that manages manipulation on the admin in wordpress
      */
 
-    class Better_Pinterest_Plugin_Admin  extends Better_Pinterest_Base {
+    class Simple_Pinterest_Plugin_Admin  extends Simple_Pinterest_Base {
 
         public static function admin_init()
         {
@@ -13,9 +13,9 @@
             add_action( 'print_media_templates', array( __CLASS__, 'template' ) );
 
             // Add settings link under plugin actions on plugins page
-            add_filter( 'plugin_action_links_' . plugin_basename(BPP_PLUGIN_FILE), array( __CLASS__, 'plugin_action_links') );
+            add_filter( 'plugin_action_links_' . plugin_basename(SPP_PLUGIN_FILE), array( __CLASS__, 'plugin_action_links') );
 
-            // Adds sidebar metabox to disable bpp on a per post basis
+            // Adds sidebar metabox to disable spp on a per post basis
             add_action( 'add_meta_boxes', array( __CLASS__, 'add_meta_box' ) );
             // Saves all metadata for quiltalongs
             add_action( 'save_post', array( __CLASS__, 'save_meta_box_data' ) );
@@ -38,7 +38,7 @@
                 // because in some cases such as /wp-admin/press-this.php the media
                 // library isn't enqueued and shouldn't be. The script includes
                 // safeguards to avoid errors in this situation
-                wp_enqueue_script( 'advanced-pinterest-settings', plugins_url( 'scripts/advanced-pinterest-settings.js', BPP_PLUGIN_FILE), array( 'jquery' ), self::VERSION, true );
+                wp_enqueue_script( 'advanced-pinterest-settings', plugins_url( 'scripts/advanced-pinterest-settings.js', SPP_PLUGIN_FILE), array( 'jquery' ), self::VERSION, true );
             }
         }
 
@@ -48,7 +48,7 @@
          */
         public static function template()
         {
-            include( plugin_dir_path(BPP_PLUGIN_FILE) . 'templates/advanced-pinterest-settings-tmpl.php');
+            include( plugin_dir_path(SPP_PLUGIN_FILE) . 'templates/advanced-pinterest-settings-tmpl.php');
         }
 
         /**
@@ -58,34 +58,34 @@
         public static function register_settings()
         {
             //register our settings
-            register_setting( 'bpp-settings-group', 'bpp_color' );
-            register_setting( 'bpp-settings-group', 'bpp_onhover' );
-            register_setting( 'bpp-settings-group', 'bpp_corner' );
-            register_setting( 'bpp-settings-group', 'bpp_size', 'intval' );
-            register_setting( 'bpp-settings-group', 'bpp_lang' );
-            register_setting( 'bpp-settings-group', 'bpp_count' );
-            register_setting( 'bpp-settings-group', 'bpp_load' );
-            register_setting( 'bpp-settings-group', 'bpp_load_jq' );
-            register_setting( 'bpp-settings-group', 'bpp_description_append', 'trim' );
-            register_setting( 'bpp-settings-group', 'bpp_pagetype' );
-            register_setting( 'bpp-settings-group', 'bpp_important' );
+            register_setting( 'spp-settings-group', 'spp_color' );
+            register_setting( 'spp-settings-group', 'spp_onhover' );
+            register_setting( 'spp-settings-group', 'spp_corner' );
+            register_setting( 'spp-settings-group', 'spp_size', 'intval' );
+            register_setting( 'spp-settings-group', 'spp_lang' );
+            register_setting( 'spp-settings-group', 'spp_count' );
+            register_setting( 'spp-settings-group', 'spp_load' );
+            register_setting( 'spp-settings-group', 'spp_load_jq' );
+            register_setting( 'spp-settings-group', 'spp_description_append', 'trim' );
+            register_setting( 'spp-settings-group', 'spp_pagetype' );
+            register_setting( 'spp-settings-group', 'spp_important' );
         }
 
 
         public static function settings_default()
         {
             // Set default values
-            self::update_option('bpp_color', 'red');
-            self::update_option('bpp_onhover', 'false');
-            self::update_option('bpp_corner', 'northeast');
-            self::update_option('bpp_size', 20);
-            self::update_option('bpp_lang', 'en');
-            self::update_option('bpp_count', 'above');
-            self::update_option('bpp_load', 'async');
-            self::update_option('bpp_load_jq', '');
-            self::update_option('bpp_description_append', '');
-            self::update_option('bpp_pagetype', array('posts','pages','home','archives'));
-            self::update_option('bpp_important', '');
+            self::update_option('spp_color', 'red');
+            self::update_option('spp_onhover', 'false');
+            self::update_option('spp_corner', 'northeast');
+            self::update_option('spp_size', 20);
+            self::update_option('spp_lang', 'en');
+            self::update_option('spp_count', 'above');
+            self::update_option('spp_load', 'async');
+            self::update_option('spp_load_jq', '');
+            self::update_option('spp_description_append', '');
+            self::update_option('spp_pagetype', array('posts','pages','home','archives'));
+            self::update_option('spp_important', '');
         }
 
         public static function update_option($name, $value)
@@ -99,21 +99,38 @@
 
         public static function settings_remove()
         {
-            delete_option('bpp_color');
-            delete_option('bpp_onhover');
-            delete_option('bpp_corner');
-            delete_option('bpp_size');
-            delete_option('bpp_lang');
-            delete_option('bpp_count');
-            delete_option('bpp_load');
-            delete_option('bpp_load_jq');
-            delete_option('bpp_description_append');
-            delete_option('bpp_pagetype');
-            delete_option('bpp_important');
+            self::settings_remove_deprecated();
+
+            delete_option('spp_color');
+            delete_option('spp_onhover');
+            delete_option('spp_corner');
+            delete_option('spp_size');
+            delete_option('spp_lang');
+            delete_option('spp_count');
+            delete_option('spp_load');
+            delete_option('spp_load_jq');
+            delete_option('spp_description_append');
+            delete_option('spp_pagetype');
+            delete_option('spp_important');
+        }
+
+        public static function settings_remove_deprecated()
+        {
+            delete_option('spp_color');
+            delete_option('spp_onhover');
+            delete_option('spp_corner');
+            delete_option('spp_size');
+            delete_option('spp_lang');
+            delete_option('spp_count');
+            delete_option('spp_load');
+            delete_option('spp_load_jq');
+            delete_option('spp_description_append');
+            delete_option('spp_pagetype');
+            delete_option('spp_important');
 
             // @deprecated
-            delete_option('bpp_description_end');
-            delete_option('bpp_loadasync');
+            delete_option('spp_description_end');
+            delete_option('spp_loadasync');
         }
 
         /**
@@ -122,7 +139,7 @@
          */
         public static  function create_settings_menu()
         {
-            add_submenu_page( 'options-general.php', 'Better Pinterest Plugin Settings', 'Pinterest Settings', 'update_plugins', 'settings_bpp', array( __CLASS__, 'settings_page' ) );
+            add_submenu_page( 'options-general.php', 'Simple Pinterest Plugin Settings', 'Pinterest Settings', 'update_plugins', 'settings_spp', array( __CLASS__, 'settings_page' ) );
         }
 
         public static function settings_page() {
@@ -134,8 +151,8 @@
         }
 
         public static function plugin_action_links( $links ) {
-           $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=settings_bpp') .'">Settings</a>';
-           $links[] = '<a href="https://github.com/terriann/betterpinterestplugin/wiki" target="_blank">Wiki</a>';
+           $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=settings_spp') .'">Settings</a>';
+           $links[] = '<a href="https://github.com/terriann/simplepinterestplugin/wiki" target="_blank">Wiki</a>';
            return $links;
         }
 
@@ -153,8 +170,8 @@
 
             foreach ( $screens as $screen ) {
                 add_meta_box(
-                    'bpp_metabox_config',
-                    __( 'Better Pinterest Settings'),
+                    'spp_metabox_config',
+                    __( 'Simple Pinterest Settings'),
                     array( __CLASS__, 'meta_box' ),
                     $screen,
                     'side'
@@ -180,12 +197,12 @@
              */
 
             // Check if our nonce is set.
-            if ( ! isset( $_POST['bpp_meta_box_nonce'] ) ) {
+            if ( ! isset( $_POST['spp_meta_box_nonce'] ) ) {
                 return;
             }
 
             // Verify that the nonce is valid.
-            if ( ! wp_verify_nonce( $_POST['bpp_meta_box_nonce'], 'bpp_meta_box' ) ) {
+            if ( ! wp_verify_nonce( $_POST['spp_meta_box_nonce'], 'spp_meta_box' ) ) {
                 return;
             }
 
@@ -211,15 +228,15 @@
             /* OK, it's safe for us to save the data now. */
 
             // If it's not set then make sure there's no unnecessary post meta empty value hanging around
-            if ( ! isset( $_POST['bpp_disable_pinit'] ) ) {
-                delete_post_meta( $post_id, 'bpp_disable_pinit' );
+            if ( ! isset( $_POST['spp_disable_pinit'] ) ) {
+                delete_post_meta( $post_id, 'spp_disable_pinit' );
                 return;
             }
 
             // Sanitize user input.
-            $value = sanitize_text_field( $_POST['bpp_disable_pinit'] );
+            $value = sanitize_text_field( $_POST['spp_disable_pinit'] );
             // Update the meta field in the database.
-            update_post_meta( $post_id, 'bpp_disable_pinit', $value );
+            update_post_meta( $post_id, 'spp_disable_pinit', $value );
         }
 
 

@@ -3,106 +3,106 @@ jQuery(document).ready(function() {
     var version = '0.1.6';
 
     // Loop through each post
-    jQuery('.bpp_post_wrapper').each(function(){
+    jQuery('.spp_post_wrapper').each(function(){
 
-        var $bpp_post = jQuery(this);
+        var $spp_post = jQuery(this);
 
         // get configured setting
-        var bpp_color = $bpp_post.data('bpp-color'),
-            bpp_size = $bpp_post.data('bpp-size'),
-            bpp_lang = $bpp_post.data('bpp-lang'),
-            bpp_count = $bpp_post.data('bpp-count'),
-            bpp_pinhover = $bpp_post.data('bpp-pinhover'),
-            bpp_pincorner = $bpp_post.data('bpp-pincorner'),
-            bpp_pinlink = $bpp_post.data('bpp-pinlink'),
-            bpp_append = $bpp_post.data('bpp-append'),
-            bpp_important = $bpp_post.data('bpp-important');
+        var spp_color = $spp_post.data('spp-color'),
+            spp_size = $spp_post.data('spp-size'),
+            spp_lang = $spp_post.data('spp-lang'),
+            spp_count = $spp_post.data('spp-count'),
+            spp_pinhover = $spp_post.data('spp-pinhover'),
+            spp_pincorner = $spp_post.data('spp-pincorner'),
+            spp_pinlink = $spp_post.data('spp-pinlink'),
+            spp_append = $spp_post.data('spp-append'),
+            spp_important = $spp_post.data('spp-important');
 
 
-        bpp_append = (bpp_append && bpp_append.length > 0) ? ' ' + $bpp_post.data('bpp-append') : '';
+        spp_append = (spp_append && spp_append.length > 0) ? ' ' + $spp_post.data('spp-append') : '';
 
         // Loop through each image in a post
-        $bpp_post.find('img').each(function(){
+        $spp_post.find('img').each(function(){
 
-            var bpp_img = this;
+            var spp_img = this;
 
             // Respect the no-pin
             // Exclude small images
-            if( jQuery(bpp_img).attr('nopin') === 'nopin'
-             || jQuery(bpp_img).get(0).clientWidth < 200) {
+            if( jQuery(spp_img).attr('nopin') === 'nopin'
+             || jQuery(spp_img).get(0).clientWidth < 200) {
                 return;
             }
 
             // Special hack for lazy load plugins
-            var bpp_mediasrc = jQuery(bpp_img).attr('src');
-            if(bpp_mediasrc != '' || bpp_mediasrc.substr(0, 5) == 'data:') {
-                if(jQuery(bpp_img).data('lazy-src')){
-                    bpp_mediasrc = jQuery(bpp_img).data('lazy-src');
+            var spp_mediasrc = jQuery(spp_img).attr('src');
+            if(spp_mediasrc != '' || spp_mediasrc.substr(0, 5) == 'data:') {
+                if(jQuery(spp_img).data('lazy-src')){
+                    spp_mediasrc = jQuery(spp_img).data('lazy-src');
                 }
             }
 
             // Create the pinterest URI for this image
-            var bpp_href  = '//www.pinterest.com/pin/create/button/';
-                bpp_href += '?url=' + encodeURI(bpp_pinlink);
-                bpp_href += '&media=' + encodeURI(bpp_mediasrc);
-                bpp_href += '&description=' + encodeURI(jQuery(bpp_img).attr('alt') + bpp_append);
+            var spp_href  = '//www.pinterest.com/pin/create/button/';
+                spp_href += '?url=' + encodeURI(spp_pinlink);
+                spp_href += '&media=' + encodeURI(spp_mediasrc);
+                spp_href += '&description=' + encodeURI(jQuery(spp_img).attr('alt') + spp_append);
 
-            var bpp_button_wrap = jQuery('<span>')
-                                  .addClass('bpp_button_wrapper');
+            var spp_button_wrap = jQuery('<span>')
+                                  .addClass('spp_button_wrapper');
 
             // Do not change these to data() cause then the number doesn't load
-            var bpp_anchor = jQuery('<a>')
-                             .attr('href', bpp_href)
+            var spp_anchor = jQuery('<a>')
+                             .attr('href', spp_href)
                              .attr('data-pin-do', 'buttonPin')
-                             .attr('data-pin-config', bpp_count)
-                             .attr('data-pin-height', bpp_size)
-                             .attr('data-pin-lang', bpp_lang)
-                             .attr('data-pin-color', bpp_color);
+                             .attr('data-pin-config', spp_count)
+                             .attr('data-pin-height', spp_size)
+                             .attr('data-pin-lang', spp_lang)
+                             .attr('data-pin-color', spp_color);
 
-            var bpp_button = jQuery('<img>').attr('src', '//assets.pinterest.com/images/pidgets/pinit_fg_'+bpp_lang+'_rect_'+bpp_color+'_'+bpp_size+'.png');
+            var spp_button = jQuery('<img>').attr('src', '//assets.pinterest.com/images/pidgets/pinit_fg_'+spp_lang+'_rect_'+spp_color+'_'+spp_size+'.png');
 
             // Append the button to the anchor inside the button wrapper for display
-            var bpp_display = jQuery(bpp_button_wrap).append(jQuery(bpp_anchor).append(bpp_button));
+            var spp_display = jQuery(spp_button_wrap).append(jQuery(spp_anchor).append(spp_button));
 
             // Add miscelaneous classes to image wrapper
-            var bpp_img_wrap_class = '';
+            var spp_img_wrap_class = '';
 
             // Ability to override hover settings on a per-image basis
-            var _i_bpp_pinhover = jQuery(bpp_img).data('bpp-pinhover');
-            if( (bpp_pinhover == true && _i_bpp_pinhover != 'always')
-                || _i_bpp_pinhover == 'onhover') {
-                bpp_img_wrap_class += " onhover";
+            var _i_spp_pinhover = jQuery(spp_img).data('spp-pinhover');
+            if( (spp_pinhover == true && _i_spp_pinhover != 'always')
+                || _i_spp_pinhover == 'onhover') {
+                spp_img_wrap_class += " onhover";
             }
             // set the corner the pin belongs
-            if(bpp_pincorner) {
-                bpp_img_wrap_class += " " + bpp_pincorner;
+            if(spp_pincorner) {
+                spp_img_wrap_class += " " + spp_pincorner;
             }
             // If it's the large button
-            if(bpp_size == 28) {
-                bpp_img_wrap_class += " large";
+            if(spp_size == 28) {
+                spp_img_wrap_class += " large";
             }
             // Add class for count_above, count_none and count_beside
-            bpp_img_wrap_class += " count_"+bpp_count;
+            spp_img_wrap_class += " count_"+spp_count;
 
             // Add wrapper and drop button after image
-            if(jQuery(bpp_img).parent('a').length > 0) {
-                jQuery(bpp_img).parent('a').wrap('<span class="bpp_img_wrapper' + bpp_img_wrap_class + '"></span>');
-                jQuery(bpp_img).parent('a').after(bpp_display);
-                var bpp_parentparent = jQuery(bpp_img).parent('a').parent().parent().get(0);
+            if(jQuery(spp_img).parent('a').length > 0) {
+                jQuery(spp_img).parent('a').wrap('<span class="spp_img_wrapper' + spp_img_wrap_class + '"></span>');
+                jQuery(spp_img).parent('a').after(spp_display);
+                var spp_parentparent = jQuery(spp_img).parent('a').parent().parent().get(0);
             } else {
-                jQuery(bpp_img).wrap('<span class="bpp_img_wrapper' + bpp_img_wrap_class + '"></span>');
-                jQuery(bpp_img).after(bpp_display);
-                var bpp_parentparent = jQuery(bpp_img).parent().parent().get(0);
+                jQuery(spp_img).wrap('<span class="spp_img_wrapper' + spp_img_wrap_class + '"></span>');
+                jQuery(spp_img).after(spp_display);
+                var spp_parentparent = jQuery(spp_img).parent().parent().get(0);
             }
 
-            var bpp_transferclass = ['alignnone', 'alignleft', 'aligncenter', 'alignright'];
+            var spp_transferclass = ['alignnone', 'alignleft', 'aligncenter', 'alignright'];
 
-            jQuery.each( bpp_transferclass, function( key, value ) {
-                if(jQuery(bpp_img).hasClass(value)) {
-                    if(bpp_important){
-                        jQuery(bpp_parentparent).addClass('bpp_imp');
+            jQuery.each( spp_transferclass, function( key, value ) {
+                if(jQuery(spp_img).hasClass(value)) {
+                    if(spp_important){
+                        jQuery(spp_parentparent).addClass('spp_imp');
                     }
-                    jQuery(bpp_parentparent).addClass(value);
+                    jQuery(spp_parentparent).addClass(value);
                 }
             });
 
