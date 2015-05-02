@@ -152,7 +152,7 @@
 
         public static function plugin_action_links( $links ) {
            $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=settings_spp') .'">Settings</a>';
-           $links[] = '<a href="https://github.com/terriann/simplepinterestplugin/wiki" target="_blank">Wiki</a>';
+           $links[] = '<a href="https://github.com/terriann/simple-pinterest-plugin/wiki" target="_blank">Wiki</a>';
            return $links;
         }
 

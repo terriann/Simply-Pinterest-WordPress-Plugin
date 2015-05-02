@@ -13,7 +13,7 @@ This plugin strives to achieve that goal with the following guidelines
 -  Avoid bloating the plugin with unnecessary features
 - Leave no footprint, when the plugin is deactivated it will remove all of it's options from the database.
 
-This plugin will be free and open-source. Developers are welcome to contribute after the first release of the plugin. Any issues and bug reports should be filed in the [GitHub Issues](https://github.com/terriann/simplepinterestplugin/issues) for the project and documentation will eventually live in the [GitHub Wiki](https://github.com/terriann/simplepinterestplugin/wiki).
+This plugin will be free and open-source. Developers are welcome to contribute after the first release of the plugin. Any issues and bug reports should be filed in the [GitHub Issues](https://github.com/terriann/simple-pinterest-plugin/issues) for the project and documentation will eventually live in the [GitHub Wiki](https://github.com/terriann/simple-pinterest-plugin/wiki).
 
 ##What this Plugin will NOT do
 
