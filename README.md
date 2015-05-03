@@ -1,5 +1,11 @@
 # Simple Pinterest Plugin
 
+--------
+
+The Simple Pinterest Plugin makes it easy to use the advanced native Pinterest "pin it" button on your blog. Perfect for lifestyle, craft & photography bloggers this plugin allow you to use global settings or customize on a per-post, per-page or per-image basis. No matter where the post is pinned from it will always credit the permalink and you can customize the button's color, layout. Using the best SEO practices and setting a goal to create a free plugin that is "set it and forget it" while making it obvious and simple for your visitors to share your great content through this high traffic social network!
+
+------
+
 The Simple Pinterset plugin is designed to be as light weight as possible while achieving one goal: making it easy for your visitors to share your content on interest.
 
 This plugin strives to achieve that goal with the following guidelines

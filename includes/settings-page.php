@@ -1,4 +1,4 @@
-            <div class="wrap">
+            <div class="wrap" id="spp_pin_plugin_admin">
             <h2>Simple Pinterest Plugin</h2>
 
             <p>This plugin allows for the same options listed on the <a href="https://business.pinterest.com/en/widget-builder#do_pin_it_button" target="_Blank">Pinterest widget builder</a> page to be applied to all the images in your post unless otherwise specified.  We respect the <code>nopin="nopin"</code> attribute and will not show the button on an image smaller than 200px wide.</p>
@@ -17,9 +17,9 @@
                     <td>
                         <fieldset>
                             <legend class="screen-reader-text"><span>Pin it Button Color</span></legend>
-                            <label title="Red"><input type="radio" name="spp_color" value="red"<?php checked( 'red' == get_option('spp_color') ); ?>> <span>Red</span></label><br>
-                            <label title="White"><input type="radio" name="spp_color" value="white"<?php checked( 'white' == get_option('spp_color') ); ?>> <span>White</span></label><br>
-                            <label title="Gray"><input type="radio" name="spp_color" value="gray"<?php checked( 'gray' == get_option('spp_color') ); ?>> <span>Gray</span></label><br>
+                            <label title="Red"><input type="radio" name="spp_color" value="red"<?php checked( 'red' == get_option('spp_color') ); ?>> <span>Red</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
+                            <label title="White"><input type="radio" name="spp_color" value="white"<?php checked( 'white' == get_option('spp_color') ); ?>> <span>White</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_white_28.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
+                            <label title="Gray"><input type="radio" name="spp_color" value="gray"<?php checked( 'gray' == get_option('spp_color') ); ?>> <span>Gray</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_gray_28.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
                         </fieldset>
                     </td>
                     </tr>
@@ -28,20 +28,9 @@
                     <th scope="row">Pin it Button Size</th>
                     <td>
                         <fieldset>
-                            <legend class="screen-reader-text"><span>Pin it Button Color</span></legend>
-                            <label title="Large"><input type="radio" name="spp_size" value="28"<?php checked( '28' == get_option('spp_size') ); ?>> <span>Large (28px)</span></label><br>
-                            <label title="Small"><input type="radio" name="spp_size" value="20"<?php checked( '20' == get_option('spp_size') ); ?>> <span>Small (20px)</span></label><br>
-                        </fieldset>
-                    </td>
-                    </tr>
-
-                    <tr valign="top">
-                    <th scope="row">Pin it Button Language</th>
-                    <td>
-                        <fieldset>
-                            <legend class="screen-reader-text"><span>Pin it Button Color</span></legend>
-                            <label title="English"><input type="radio" name="spp_lang" value="en"<?php checked( 'en' == get_option('spp_lang') ); ?>> <span>English</span></label><br>
-                            <label title="Japanese"><input type="radio" name="spp_lang" value="ja"<?php checked( 'ja' == get_option('spp_lang') ); ?>> <span>Japanese</span></label><br>
+                            <legend class="screen-reader-text"><span>Pin it Button Size</span></legend>
+                            <label title="Large"><input type="radio" name="spp_size" value="28"<?php checked( '28' == get_option('spp_size') ); ?>> <span>Large (28px)</span>  <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
+                            <label title="Small"><input type="radio" name="spp_size" value="20"<?php checked( '20' == get_option('spp_size') ); ?>> <span>Small (20px)</span>  <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_20.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
                         </fieldset>
                     </td>
                     </tr>
@@ -50,7 +39,7 @@
                     <th scope="row">Pin it Button Corner</th>
                     <td>
                         <fieldset>
-                            <legend class="screen-reader-text"><span>Pin it Button Color</span></legend>
+                            <legend class="screen-reader-text"><span>Pin it Button Corner</span></legend>
                             <label title="Northwest"><input type="radio" name="spp_corner" value="northwest"<?php checked( 'northwest' == get_option('spp_corner') ); ?>> <span>Northwest (top left)</span></label><br>
                             <label title="Northeast"><input type="radio" name="spp_corner" value="northeast"<?php checked( 'northeast' == get_option('spp_corner') ); ?>> <span>Northeast (top right)</span></label><br>
                             <label title="Southwest"><input type="radio" name="spp_corner" value="southwest"<?php checked( 'southwest' == get_option('spp_corner') ); ?>> <span>Southwest (bottom left)</span></label><br>
@@ -63,10 +52,10 @@
                     <th scope="row">Pin it Button Count</th>
                     <td>
                         <fieldset>
-                            <legend class="screen-reader-text"><span>Pin it Button Color</span></legend>
-                            <label title="Above the button"><input type="radio" name="spp_count" value="above"<?php checked( 'above' == get_option('spp_count') ); ?>> <span>Above the button</span></label><br>
-                            <label title="Beside the button"><input type="radio" name="spp_count" value="beside"<?php checked( 'beside' == get_option('spp_count') ); ?>> <span>Beside the button (<em>If count is 0 no numbers show, this is a bug on the Pinterest side, not the plugin</em>)</span></label><br>
-                            <label title="None"><input type="radio" name="spp_count" value="none"<?php checked( 'none' == get_option('spp_count') ); ?>> <span>None</span></label><br>
+                            <legend class="screen-reader-text"><span>Pin it Button Count</span></legend>
+                            <label title="Above the button"><input type="radio" name="spp_count" value="above"<?php checked( 'above' == get_option('spp_count') ); ?>> <span>Above the button</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28-above.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
+                            <label title="Beside the button"><input type="radio" name="spp_count" value="beside"<?php checked( 'beside' == get_option('spp_count') ); ?>> <span>Beside the button (<em>If count is 0 no numbers show</em>)</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28-side.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
+                            <label title="None"><input type="radio" name="spp_count" value="none"<?php checked( 'none' == get_option('spp_count') ); ?>> <span>None</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
                         </fieldset>
                     </td>
                     </tr>
@@ -75,7 +64,7 @@
                     <th scope="row">Hover Settings</th>
                     <td>
                         <fieldset>
-                            <legend class="screen-reader-text"><span>Pin it Button Color</span></legend>
+                            <legend class="screen-reader-text"><span>Pin it Button Hover Settings</span></legend>
                             <label title="Show on Hover Only"><input type="radio" name="spp_onhover" value="true"<?php checked( 'true' == get_option('spp_onhover') ); ?>> <span>Only show Pin it button on hover/mouseover</span></label><br>
                             <label title="Always Show Pin"><input type="radio" name="spp_onhover" value="false"<?php checked( 'false' == get_option('spp_onhover') ); ?>> <span>Always show pin it button</span></label><br>
                         </fieldset>
@@ -118,6 +107,18 @@
                     <h3>Advanced Settings</h3>
 
                     <table class="form-table">
+
+                        <tr valign="top">
+                        <th scope="row">Pin it Button Language</th>
+                        <td>
+                            <fieldset>
+                                <legend class="screen-reader-text"><span>Pin it Button Color</span></legend>
+                                <label title="English"><input type="radio" name="spp_lang" value="en"<?php checked( 'en' == get_option('spp_lang') ); ?>> <span>English</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
+                                <label title="Japanese"><input type="radio" name="spp_lang" value="ja"<?php checked( 'ja' == get_option('spp_lang') ); ?>> <span>Japanese</span> <img src="<?php echo plugins_url( '/images/pinit_fg_ja_rect_red_28.png', SPP_PLUGIN_FILE ); ?>" /></label><br>
+                            </fieldset>
+                        </td>
+                        </tr>
+
                         <tr valign="top">
                         <th scope="row">Load pinit.js Asyncronously?</th>
                         <td>
@@ -158,3 +159,11 @@
 
             </form>
             </div>
+
+            <style type="text/css">
+            #spp_pin_plugin_admin img {
+                vertical-align: middle;
+                float: left;
+                margin-right: 10px;
+            }
+            </style>

@@ -39,12 +39,12 @@ If you're looking for an easy way to pin images in your blog posts and pages, th
 == Installation ==
 
 1. Upload the `better-pinterest-plugin/` directory to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in your installation of WordPress
-1. Configure the settings in the menu under Settings > Pinterest Settings
+2. Activate the plugin through the 'Plugins' menu in your installation of WordPress
+3. Configure the settings in the menu under Settings > Pinterest Settings
 
 == Frequently Asked Questions ==
 
-= Can I Customize the Button =
+= Can I Customize the Button With a Different Graphic? =
 
 No, to keep the plugin light and easy to use we only support the default Pinterest branded buttons. Pinterest has put their design resources into what works well to get users to click that "Pin It" button and it really stands out to the user that they should pin the great images you have in your post to come back to your content and share it with their followers.
 
