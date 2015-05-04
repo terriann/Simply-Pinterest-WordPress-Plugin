@@ -1,15 +1,15 @@
 <?php
 /*
-Plugin Name: Simple Pinterest Plugin
+Plugin Name: Simply Pinterest
 Plugin URI: https://github.com/terriann/betterpinterestplugin
-Description: Simple Pinterest Plugin is a WordPress plugin designed to be light weight, easy to use while achieving one goal: making it easy for your visitors to share your content on Pinterest. This plugin puts a Pinterest button over the corner of each image with customizabele options making it clear & easy for your visitors to share your content with their followers.
+Description: Simply Pinterest is a WordPress plugin designed to be light weight, easy to use while achieving one goal: making it easy for your visitors to share your content on Pinterest. This plugin puts a Pinterest button over the corner of each image with customizabele options making it clear & easy for your visitors to share your content with their followers.
 Version: 1.0.2
 Author: Terri Ann Swallow
 Author URI: http://terriswallow.com/
 License: GPLv2
 */
 
-define('SPP_PLUGIN_FILE', __FILE__);
+define('BPP_PLUGIN_FILE', __FILE__);
 
 require_once( dirname(__FILE__) . '/includes/simple-pinterest-base.php' );
 /**
@@ -56,7 +56,7 @@ function myformatTinyMCE($initArray) {
  */
 function change_mce_options( $init ) {
  //code that adds additional attributes to the pre tag
- $ext = "img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|id|style|nopin|data-spp-pinhover]";
+ $ext = "img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|id|style|nopin|data-bpp-pinhover]";
 
  //if extended_valid_elements alreay exists, add to it
  //otherwise, set the extended_valid_elements to $ext
@@ -85,7 +85,7 @@ function kses_allow_nopin_on_img()
     global $allowedposttags;
 
     $tags = array( 'img' );
-    $new_attributes = array( 'nopin' => true, 'data-spp-pinhover' => true);
+    $new_attributes = array( 'nopin' => true, 'data-bpp-pinhover' => true);
 
     foreach( $tags as $tag ) {
         if( isset( $allowedposttags[ $tag ] ) && is_array( $allowedposttags[ $tag ] ) ) {

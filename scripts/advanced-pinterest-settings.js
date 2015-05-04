@@ -26,7 +26,7 @@ This is the part of the script that is used in the editor for advanced pinterest
 
 		attributes = {
 			nopin: dom.getAttrib( image, 'nopin' ),
-            pinhover: dom.getAttrib( image, 'data-spp-pinhover')
+            pinhover: dom.getAttrib( image, 'data-bpp-pinhover')
 		};
 
 		options.metadata = _.extend( options.metadata, attributes );
@@ -52,9 +52,9 @@ This is the part of the script that is used in the editor for advanced pinterest
         }
 
 		if ( pinhover ) {
-            dom.setAttrib( image, 'data-spp-pinhover', pinhover );
+            dom.setAttrib( image, 'data-bpp-pinhover', pinhover );
 		} else {
-            dom.setAttrib( image, 'data-spp-pinhover', null );
+            dom.setAttrib( image, 'data-bpp-pinhover', null );
         }
 
 	} );
