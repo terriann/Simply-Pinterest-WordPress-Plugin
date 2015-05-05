@@ -66,8 +66,8 @@
                         <p>If you are displaying the count, would you like the count to display 0 or hide the count bubble whent he count is 0?</p>
                         <fieldset>
                             <legend class="screen-reader-text"><span>Pin it Button 0 Count</span></legend>
-                            <label title="Do Not Display 0 count"><input type="radio" name="bpp_zero_count" value="false"<?php checked( 'false' == get_option('bpp_zero_count') ); ?>> <span>Do not display 0 count</span></label><br>
-                            <label title="Beside the button"><input type="radio" name="bpp_zero_count" value="true"<?php checked( 'true' == get_option('bpp_zero_count') ); ?>> <span>Display 0 count</span></label><br>
+                            <label title="Do Not Display 0 count"><input type="radio" name="bpp_zero_count" value="true"<?php checked( 'true' == get_option('bpp_zero_count') ); ?>> <span>Do not display 0 count</span></label><br>
+                            <label title="Beside the button"><input type="radio" name="bpp_zero_count" value="false"<?php checked( 'false' == get_option('bpp_zero_count') ); ?>> <span>Display 0 count</span></label><br>
                         </fieldset>
                     </td>
                     </tr>
