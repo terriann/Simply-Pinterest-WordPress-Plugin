@@ -12,6 +12,7 @@ jQuery(document).ready(function() {
             bpp_size = $bpp_post.data('bpp-size'),
             bpp_lang = $bpp_post.data('bpp-lang'),
             bpp_count = $bpp_post.data('bpp-count'),
+            bpp_zero_count = $bpp_post.data('bpp-zero-count'),
             bpp_pinhover = $bpp_post.data('bpp-pinhover'),
             bpp_pincorner = $bpp_post.data('bpp-pincorner'),
             bpp_pinlink = $bpp_post.data('bpp-pinlink'),
@@ -55,6 +56,7 @@ jQuery(document).ready(function() {
                              .attr('href', bpp_href)
                              .attr('data-pin-do', 'buttonPin')
                              .attr('data-pin-config', bpp_count)
+                             .attr('data-pin-zero', bpp_zero_count)
                              .attr('data-pin-height', bpp_size)
                              .attr('data-pin-lang', bpp_lang)
                              .attr('data-pin-color', bpp_color);

@@ -64,6 +64,7 @@
             register_setting( 'bpp-settings-group', 'bpp_size', 'intval' );
             register_setting( 'bpp-settings-group', 'bpp_lang' );
             register_setting( 'bpp-settings-group', 'bpp_count' );
+            register_setting( 'bpp-settings-group', 'bpp_zero_count' );
             register_setting( 'bpp-settings-group', 'bpp_load' );
             register_setting( 'bpp-settings-group', 'bpp_load_jq' );
             register_setting( 'bpp-settings-group', 'bpp_description_append', 'trim' );
@@ -81,6 +82,7 @@
             self::update_option('bpp_size', 20);
             self::update_option('bpp_lang', 'en');
             self::update_option('bpp_count', 'above');
+            self::update_option('bpp_zero_count', 'true');
             self::update_option('bpp_load', 'async');
             self::update_option('bpp_load_jq', '');
             self::update_option('bpp_description_append', '');
@@ -107,6 +109,7 @@
             delete_option('bpp_size');
             delete_option('bpp_lang');
             delete_option('bpp_count');
+            delete_option('bpp_zero_count');
             delete_option('bpp_load');
             delete_option('bpp_load_jq');
             delete_option('bpp_description_append');
