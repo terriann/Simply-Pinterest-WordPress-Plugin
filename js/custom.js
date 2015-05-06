@@ -80,7 +80,6 @@ $( document ).ready(function() {
     /* change modal title when slide changes */
     $('#modalCarousel').on('slid.bs.carousel', function () {
       $('.modal-title').html($(this).find('.active').attr("title"));
-      console.log('on!', $(this).find('.active'));
       $('.modal-desc').html($(this).find('.active').find('img').attr("alt"));
     })
 
