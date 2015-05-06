@@ -57,9 +57,11 @@ $( document ).ready(function() {
 
 /** Slide show carousel **/
     /* copy loaded thumbnails into carousel */
-    $('.row .thumbnail').on('load', function() {
 
-    }).each(function(i) {
+    $('.gallery a[href="#"]').on('click', function(e){
+        e.preventDefault();
+    });
+    $('.row .thumbnail').on('load', function() { }).each(function(i) {
       if(this.complete) {
         var item = $('<div class="item"></div>');
         var itemDiv = $(this).parents('div');
@@ -69,7 +71,9 @@ $( document ).ready(function() {
         $(itemDiv.html()).appendTo(item);
         item.appendTo('.carousel-inner');
         if (i==0){ // set first item active
-         item.addClass('active');
+            $('.modal-title').html(item.attr("title"));
+            $('.modal-desc').html(item.find('img').attr("alt"));
+            item.addClass('active');
         }
       }
     });
