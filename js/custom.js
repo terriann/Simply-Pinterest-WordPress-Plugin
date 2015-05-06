@@ -62,7 +62,6 @@ $( document ).ready(function() {
         e.preventDefault();
     });
     $('.row .thumbnail').on('ready', function() { }).each(function(i) {
-      if(this.complete) {
         var item = $('<div class="item"></div>');
         var itemDiv = $(this).parents('div');
         var title = $(this).parent('a').attr("title");
@@ -70,14 +69,13 @@ $( document ).ready(function() {
         item.attr("title",title);
         $(itemDiv.html()).appendTo(item);
         item.appendTo('.carousel-inner');
-        konsole.log('i is', i);
+        
         if (i==0){ // set first item active
             konsole.log('here', item);
             $('.modal-title').html(item.attr("title"));
             $('.modal-desc').html(item.find('img').attr("alt"));
             item.addClass('active');
         }
-      }
     });
 
     /* activate the carousel */
