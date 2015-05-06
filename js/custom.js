@@ -13,10 +13,12 @@ $( document ).ready(function() {
     });
 
 
-    $("a[href^='#']").click(function(e) {
+    $("a.scrollto").click(function(e) {
         e.preventDefault();
+
         var anchor = $(this).attr('href').substring(1);
         ga('send', 'event', 'anchor', anchor);
+
         $('html, body').animate({
             scrollTop: $("a[name='"+anchor+"']").offset().top
         }, 2000);
@@ -60,4 +62,46 @@ $( document ).ready(function() {
     });
 
 
+
+/** Slide show carousel **/
+    /* copy loaded thumbnails into carousel */
+    $('.row .thumbnail').on('load', function() {
+
+    }).each(function(i) {
+      if(this.complete) {
+        var item = $('<div class="item"></div>');
+        var itemDiv = $(this).parents('div');
+        var title = $(this).parent('a').attr("title");
+
+        item.attr("title",title);
+        $(itemDiv.html()).appendTo(item);
+        item.appendTo('.carousel-inner');
+        if (i==0){ // set first item active
+         item.addClass('active');
+        }
+      }
+    });
+
+    /* activate the carousel */
+    $('#modalCarousel').carousel({interval:false});
+
+    /* change modal title when slide changes */
+    $('#modalCarousel').on('slid.bs.carousel', function () {
+      $('.modal-title').html($(this).find('.active').attr("title"));
+      console.log('on!', $(this).find('.active'));
+      $('.modal-desc').html($(this).find('.active').find('img').attr("alt"));
+    })
+
+    /* when clicking a thumbnail */
+    $('.row .thumbnail').click(function(){
+        var idx = $(this).parents('div').index();
+        var id = parseInt(idx);
+        $('#myModal').modal('show'); // show the modal
+        $('#modalCarousel').carousel(id); // slide carousel to selected
+
+    });
+/** END Slide show carousel **/
+
 });
+
+
