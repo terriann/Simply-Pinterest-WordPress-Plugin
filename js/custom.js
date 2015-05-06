@@ -71,6 +71,7 @@ $( document ).ready(function() {
         $(itemDiv.html()).appendTo(item);
         item.appendTo('.carousel-inner');
         if (i==0){ // set first item active
+            konsole.log('here', item);
             $('.modal-title').html(item.attr("title"));
             $('.modal-desc').html(item.find('img').attr("alt"));
             item.addClass('active');
@@ -105,3 +106,15 @@ $(document).on('click','.navbar-collapse.in',function(e) {
         $(this).collapse('hide');
     }
 });
+
+
+/* konsole is a safe wrapper for the Firebug console. */
+var konsole = {
+  log: function(args){},
+  dir: function(args){}
+};
+// Remove below here when in production
+if (typeof window.console != 'undefined' && typeof window.console.log == 'function') {
+  konsole = window.console;
+  konsole.log("konsole initialized");
+}
