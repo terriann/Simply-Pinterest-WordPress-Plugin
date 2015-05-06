@@ -26,6 +26,13 @@
     font-size:21px;
     color: #3CB9C2;
 }
+.navbar-default .navbar-brand .icon {
+    transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    -moz-transform: rotate(340deg);
+    -o-transform: rotate(340deg);
+    -ms-transform: rotate(402deg);
+}
 
 
 p {
