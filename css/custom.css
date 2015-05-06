@@ -128,5 +128,16 @@ fieldset[disabled] .btn-spp.active {
 
 
 
+#config-video {
+  position: absolute;
+  top: 15.1%;
+  left: 13.55%;
+  width: 73.3%;
+}
+
+
+
+
+
 @media (min-width: 768px) {
 }
