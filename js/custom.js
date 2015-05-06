@@ -61,7 +61,7 @@ $( document ).ready(function() {
     $('.gallery a[href="#"]').on('click', function(e){
         e.preventDefault();
     });
-    $('.row .thumbnail').on('load', function() { }).each(function(i) {
+    $('.row .thumbnail').on('ready', function() { }).each(function(i) {
       if(this.complete) {
         var item = $('<div class="item"></div>');
         var itemDiv = $(this).parents('div');
