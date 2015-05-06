@@ -26,6 +26,8 @@
     font-size:21px;
     color: #3CB9C2;
 }
+.intro-message h1 .icon,
+.banner h2 .icon,
 .navbar-default .navbar-brand .icon {
     transform: rotate(340deg);
     -webkit-transform: rotate(340deg);
