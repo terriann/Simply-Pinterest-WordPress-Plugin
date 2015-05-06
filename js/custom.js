@@ -12,7 +12,6 @@ $( document ).ready(function() {
         });
     });
 
-
     $("a.scrollto").click(function(e) {
         e.preventDefault();
 
@@ -25,13 +24,7 @@ $( document ).ready(function() {
     });
 
 
-
-
-
-
-
     // Event tracking
-
     // Tracking downloads
     $('.intro-message a.download').on('click', function() {
         ga('send', 'event', 'button', 'download', 'header');
@@ -60,7 +53,6 @@ $( document ).ready(function() {
     $("a[href^='htt']").on('click', function() {
         ga('send', 'event', 'external', 'click',  $(this).attr('href'));
     });
-
 
 
 /** Slide show carousel **/
@@ -105,3 +97,8 @@ $( document ).ready(function() {
 });
 
 
+$(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+        $(this).collapse('hide');
+    }
+});
