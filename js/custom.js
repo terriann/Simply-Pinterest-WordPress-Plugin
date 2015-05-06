@@ -69,9 +69,8 @@ $( document ).ready(function() {
         item.attr("title",title);
         $(itemDiv.html()).appendTo(item);
         item.appendTo('.carousel-inner');
-        
+
         if (i==0){ // set first item active
-            konsole.log('here', item);
             $('.modal-title').html(item.attr("title"));
             $('.modal-desc').html(item.find('img').attr("alt"));
             item.addClass('active');
