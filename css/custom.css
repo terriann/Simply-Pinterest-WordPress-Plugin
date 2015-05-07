@@ -156,10 +156,12 @@ fieldset[disabled] .btn-spp.active {
   transform: translateY(-50%);
 }
 
-
+#videoModal .modal-content {
+    background-color:#f8f8f8;
+}
 #videoModal .modal-header {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  border-width: 0;
+  padding-bottom: 0;
 }
 #videoModal .modal-header h4.modal-title {
     font-family: 'Pacifico', cursive;
@@ -171,6 +173,12 @@ fieldset[disabled] .btn-spp.active {
 #videoModal .modal-dialog {
     width:45%;
     max-width:830px;
+}
+#videoModal .modal-content {
+  background-color: #f8f8f8;
+}
+#videoModal .modal-content .modalbutton {
+    margin-top:15px;
 }
 
 

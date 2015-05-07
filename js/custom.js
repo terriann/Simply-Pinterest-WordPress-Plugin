@@ -23,6 +23,18 @@ $( document ).ready(function() {
         }, 2000);
     });
 
+
+/* --- Make Email Link  --- */
+
+    $('.make-email-link').each(function(){
+        var email = $(this).data('nm') + '@' + $(this).data('dmn') + '.' + $(this).data('tld');
+        var anchor = $('<a>').attr('href', 'mailto:'+email).html(email);
+
+        $(this).html(anchor);
+    });
+
+
+
 /* ---- Video Functionality ----- */
     // Loop HTML5 video
     $("#config-video").bind('ended', function(){ 
@@ -38,6 +50,11 @@ $( document ).ready(function() {
     $("#config-video, #video-hover").on('mouseleave', function(){ 
         $('#video-hover').removeClass("on");
     });
+    
+    // Starts video from the beginning each time modal is launched
+    $('#videoModal').on('show.bs.modal', function (e) {
+        $(this).find('iframe').attr('src', $(this).find('iframe').attr('src'));
+    })
 
 
 /* ---- Event tracking ----- */
