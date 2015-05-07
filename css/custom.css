@@ -28,7 +28,8 @@
 }
 .intro-message h1 .icon,
 .banner h2 .icon,
-.navbar-default .navbar-brand .icon {
+.navbar-default .navbar-brand .icon,
+.pinicon {
     transform: rotate(340deg);
     -webkit-transform: rotate(340deg);
     -moz-transform: rotate(340deg);
@@ -126,17 +127,51 @@ fieldset[disabled] .btn-spp.active {
 }
 
 
-
-
 #config-video {
-  position: absolute;
-  top: 15.1%;
-  left: 13.55%;
-  width: 73.3%;
+    position: absolute;
+    top: 7.3%;
+    left: 14.3%;
+    width: 72%;
+}
+
+#video-hover {
+    position: absolute;
+    top: 7.3%;
+    left: 14.3%;
+    width: 72%;
+    background-color:rgba(0,0,0,0.4);
+    opacity: 0;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    -o-transition: .6s;
+    -transition: .6s;
+}
+#video-hover.on {
+    opacity: 1;
+}
+#video-hover .playbtn {
+  text-align:center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 
-
+#videoModal .modal-header {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+#videoModal .modal-header h4.modal-title {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+    color: #3CB9C2;
+    font-size: 22px;
+    text-align: center;
+}
+#videoModal .modal-dialog {
+    width:45%;
+    max-width:830px;
+}
 
 
 @media (min-width: 768px) {
