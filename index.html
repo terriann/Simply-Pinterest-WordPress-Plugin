@@ -92,6 +92,9 @@
                             <li>
                                 <a href="https://github.com/terriann/simply-pinterest-wordpress-plugin/zipball/master" class="btn btn-default btn-lg download"><i class="fa fa-download fa-fw"></i> <span class="network-name">Free WordPress Plugin</span></a>
                             </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#videoModal" class="btn btn-default btn-lg playvideo"><i class="fa fa-play-circle fa-fw"></i> <span class="network-name">Watch the Demo Video</span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -126,7 +129,9 @@
                     <p>More and more lifestyle, food, DIY and photography bloggers everywhere are seeing more traffic from Pinterest than Facebook and Google than they have before. There are a few easy ways to boost your traffic leveraging Pinterest and this plug will help make it easy for you!</p>
                 </div>
                 <div class="col-md-3 col-sm-offset-1 col-sm-5 col-xs-6 col-xs-offset-3">
-                    <img class="img-responsive" src="http://simplypinterest.com/img/tall-sharable.jpg" alt="Simply Pinterest - a Free WordPress Plugin making it easy for your visitors to save and share your content with no code required!">
+                    <div class="row">
+                        <img class="img-responsive col-xs-12" src="http://simplypinterest.com/img/tall-sharable.jpg" alt="Simply Pinterest - a Free WordPress Plugin making it easy for your visitors to save and share your content with no code required!">
+                    </div>
                 </div>
             </div>
 
@@ -157,7 +162,7 @@
                           <div class="col-sm-4 col-xs-6"><a title="Simply Remind Your Visitors to Save Your Post" href="#"><img class="thumbnail img-responsive" src="img/screen-6.png" alt="While the button stands out, it does just that: stands out. Now no one will forget to pin your great posts!" nopin="nopin"></a></div>
                         </div>
                     </div>
-                    <div class="modal" id="myModal" role="dialog">
+                    <div class="modal" id="screenshotModal" role="dialog">
                       <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -191,7 +196,7 @@
 
     <!-- Page About -->
     <a  name="about"></a>
-    <div class="content-section-a">
+    <div class="content-section-a samplebkg">
 
         <div class="container">
 
@@ -220,73 +225,92 @@
         </div>
         <!-- /.container -->
     </div>
+
+
+
+
+
+
+
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videomodal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"><i class="fa fa-thumb-tack pinicon"></i> Simply Pinterest - demo video</h4>
+          </div>
+          <div class="modal-body">
+            <em>Demo password: demo</em>
+            <div class="embed-responsive embed-responsive-4by3">
+                <iframe src="https://player.vimeo.com/video/127150300?title=0&byline=0&portrait=0" width="800" height="501" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div class="text-center modalbutton">
+                <a href="https://github.com/terriann/simply-pinterest-wordpress-plugin/zipball/master" class="btn btn-spp btn-lg download"><i class="fa fa-download fa-fw"></i> <span class="network-name">Free Download</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
     <!-- /.content-section-a -->
     <a  name="config"></a>
     <div class="content-section-b">
         <div class="container" id="config-options">
 
-            <div class="row" id="config1">
+            <div class="row">
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Configure Simply Pinterest</h2>
-                    <p class="lead">Simply Pinterest is easy to configure. Set your blog's default setting in <code>Setting > Pinterest Settings</code></p>
-                    <p>Choose the color, positioning and design of the Pinterest "Pin it" button using the native Pinterest design which your visitors will recognize and engage with quickly.</p>
-                    <button type="button" class="btn btn-spp next-btn" data-currentpane="config1" data-togglepane="config2">Next Step &raquo;</button>
+                    <div id="config1">
+                        <p class="lead">Simply Pinterest is easy to configure. Set your blog's default setting in <code>Setting > Pinterest Settings</code></p>
+                        <p>Choose the color, positioning and design of the Pinterest "Pin it" button using the native Pinterest design which your visitors will recognize and engage with quickly.</p>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-spp next-btn" data-currentpane="config1" data-togglepane="config2">Next Step &raquo;</button>
+                        </div>
+                    </div>
+
+                    <div id="config2" class="hidden">
+                        <p class="lead">Easily disable the button on pages or posts</p>
+                        <p>If there is a page or post you want to disable the Pin it button over your images just check the <code>Disable Pin It button for all images in this post</code> checkbox on the edit post or edit page screen.</p>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-spp next-btn" data-currentpane="config2" data-togglepane="config3">Next Step &raquo;</button>
+                        </div>
+                    </div>
+
+                    <div id="config3" class="hidden">
+                        <p class="lead">Change settings for specific images</p>
+                        <p>If there is an image in a post you want to disable the button or change the settings on you can do that easily trough the WordPress Visual editor. Once the image has been added to your post click the pencil edit button and choose your settings for that image.</p>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-spp next-btn" data-currentpane="config3" data-togglepane="config4">Next Step &raquo;</button>
+                        </div>
+                    </div>
+
+                    <div id="config4" class="hidden">
+                    <p class="lead">That's it!</p>
+                    <p>Set your defaults and then just override for specific images<br>It's as easy as: <strong>set it and forget it</strong>!</p>
+                    <a href="#" class="next-btn" data-currentpane="config4" data-togglepane="config1"><i class="fa fa-retweet"></i> Start over</a>
+                    </div>
 
                 </div>
                 <div class="col-lg-5 col-sm-pull-6 col-sm-6">
 
-                    <img class="img-responsive" src="img/imac-mockup.png" nopin="nopin" alt="">
-                    <video  autoplay controls mute id="config-video">
-                      <source src="pinterest-demo-sample.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+                    <img class="img-responsive" id="videoplayer" src="img/imac-mockup.png" nopin="nopin" alt="Demo Video on Screen">
+                    <video autoplay muted loop="loop" id="config-video">
+                        <source src="pinterest-demo-sample.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
-                </div>
-            </div>
-
-            <div class="row hidden" id="config2">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Configure Simply Pinterest</h2>
-                    <p class="lead">Easily disable the button on pages or posts</p>
-                    <p>If there is a page or post you want to disable the Pin it button over your images just check the <code>Disable Pin It button for all images in this post</code> checkbox on the edit post or edit page screen.</p>
-                    <button type="button" class="btn btn-spp next-btn" data-currentpane="config2" data-togglepane="config3">Next Step &raquo;</button>
-
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
-                </div>
-            </div>
-
-            <div class="row hidden" id="config3">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Configure Simply Pinterest</h2>
-                    <p class="lead">Change settings for specific images</p>
-                    <p>If there is an image in a post you want to disable the button or change the settings on you can do that easily trough the WordPress Visual editor. Once the image has been added to your post click the pencil edit button and choose your settings for that image.</p>
-                    <button type="button" class="btn btn-spp next-btn" data-currentpane="config3" data-togglepane="config4">Next Step &raquo;</button>
-
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
-                </div>
-            </div>
-
-            <div class="row hidden" id="config4">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Configure Simply Pinterest</h2>
-                    <p class="lead">That's it!</p>
-                    <p>Set your defaults and then just override for specific images<br>It's as easy as: <strong>set it and forget it</strong>!</p>
-                    <a href="#" class="next-btn" data-currentpane="config4" data-togglepane="config1">Start over</a>
-
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
+                    <div id="video-hover">
+                        <div class="playbtn">
+                            <button type="button" class="btn btn-spp btn-lg" data-toggle="modal" data-target="#videoModal">
+                              <i class="fa fa-play-circle"></i> Play Video</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-spp btn-lg" data-toggle="modal" data-target="#videoModal"><i class="fa fa-play"></i> &nbsp; Watch the Demo Video</button>
+                    </div>
                 </div>
             </div>
 
@@ -351,7 +375,7 @@
                         <li>Unzip or Extract the contents of the download</li>
                         <li>Using an FTP client login to your hosting account and go to your WordPress installtion in the <code>/wp-contents/plugin/</code> directory</li>
                         <li>Upload the folder <code>/simply-pinterest/</code> and all of it's contents to the plugin directory</li>
-                        <li>Login to your WordPress admin to activate and <a href="#config">configure the plugin</a></li>
+                        <li>Login to your WordPress admin to activate and <a href="#config" class="scrollto">configure the plugin</a></li>
                     </ol>
 
                     <p class="lead">Add Plugin Through Admin</p>
@@ -359,7 +383,7 @@
                         <li><a href="https://github.com/terriann/simply-pinterest-wordpress-plugin/zipball/master" class="download">Download the free plugin: Simply Pinterest</a></li>
                         <li>Login to your WordPress admin and go to <code>Plugins &gt; Add New</code> the click the <code>Upload Plugin</code> button at the top of the page</li>
                         <li>Click choose file and upload the zip file you downloaded in the first step</li>
-                        <li>Activate and <a href="#config">configure the plugin</a> through your WordPress admin</li>
+                        <li>Activate and <a href="#config" class="scrollto">configure the plugin</a> through your WordPress admin</li>
                     </ol>
                 </div>
                 <div class="col-sm-6 col-sm-pull-6">
@@ -398,14 +422,17 @@
                 <div class="col-lg-7 col-sm-6 col-xs-12">
                     <h2 class="section-heading">Did you find a bug?</h2>
                     <p class="lead">If you think you've found a bug in the Simply Pinterest plugin here's what to do:</p>
-                    <p>Go to the <a href="https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues?q=" target="_blank">Github issues page</a> to see if your bug has already been addressed. If you haven't found a solution you can report a bug by clicking "New issue" on that page. Please be as detailed as possible and provide a link to a working example if possible. Filing an issue requires you to register a free Github account but this is how the developer(s) keep any bugs, tasks and features organized.</p>
+                    <p>Go to the <a href="https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues?q=" target="_blank">Github issues page</a> to see if your bug has already been addressed. If you haven't found a solution you can report a bug by clicking "New issue" on that page. Please be as detailed as you can and provide a link to a working example, if possible. Submitting an issue requires you to register a free Github account but this is how the developer(s) keep any bugs, tasks and features organized.</p>
+                    <p>You can also email your bug or issue to <span class="make-email-link" data-nm="terriann" data-tld="com" data-dmn="simplypinterest">terri ann at simply pinterest dot com (remove spaces and replace dot and at)</a> (if Github isn't your jam!)</p>
                     <br>
                     <h4>This Plugin is Feature &amp; Pull Request Friendly</h4>
                     <p>If you have a feature request for this plugin go to the <a href="https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/labels/enhancement" target="_blank">issues page</a> and see if that feature has already been requested. If it has been, leave a comment to let us know you're interested in it too. If your awesome feature idea isn't listed, click "New issue" to add it to the list and we'll let you know if we think it's a good fit with the mission of the plugin.</p>
                     <p>If you're a developer and you'd like to help support this free &amp; open source plugin you can fork &amp; submit your pull requests on <a href="https://github.com/terriann/simply-pinterest-wordpress-plugin" target="_blank">GitHub</a>. Check out the issues we have marked open and are looking for help with to start. The creator of the plugin, <a href="http://terriswallow.com" target="_blank">Terri Ann Swallow</a>, reserves the right to incorperate only pull requests that align with the plugin's mission and long term goals.</p>
                 </div>
                 <div class="col-lg-4 col-sm-5 col-sm-offset-1 col-xs-6 col-xs-offset-3">
-                    <img class="img-responsive" src="http://simplypinterest.com/img/tall-sharable.jpg" alt="Simply Pinterest - a Free WordPress Plugin making it easy for your visitors to save and share your content with no code required!">
+                    <div class="row">
+                        <img class="img-responsive col-xs-12" src="http://simplypinterest.com/img/tall-sharable.jpg" alt="Simply Pinterest - a Free WordPress Plugin making it easy for your visitors to save and share your content with no code required!">
+                    </div>
                 </div>
             </div>
 
@@ -502,7 +529,7 @@
                         </li>
                     </ul>
                     <p>Copyright &copy; Terri Ann Swallow 2015. All Rights Reserved<br />Simply Pinterest is an open source <a href="http://childlikefascination.com" target="_blank">Childlike Fascination</a> project. Fork &amp; submit your pull requests on <a href="https://github.com/terriann/simply-pinterest-wordpress-plugin" target="_blank">GitHub</a></p>
-                    <p class="copyright text-muted small">Some images provided by <a href="http://deathtothestockphoto.com/join" target="_blank">deathtothestockphoto.com</a> | <a href="https://tinypng.com/" target="_blank">image compression thanks to tinypng.com</a></p>
+                    <p class="copyright text-muted small">Some images provided by <a href="http://deathtothestockphoto.com/join" target="_blank">deathtothestockphoto.com</a> | <a href="https://tinypng.com/" target="_blank">image compression thanks to tinypng.com</a> | <a href="http://startbootstrap.com/template-overviews/landing-page/" target="_blank">Template from Start Bootstrap.com</a></p>
                 </div>
             </div>
         </div>

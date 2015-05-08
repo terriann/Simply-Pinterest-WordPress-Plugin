@@ -24,7 +24,40 @@ $( document ).ready(function() {
     });
 
 
-    // Event tracking
+/* --- Make Email Link  --- */
+
+    $('.make-email-link').each(function(){
+        var email = $(this).data('nm') + '@' + $(this).data('dmn') + '.' + $(this).data('tld');
+        var anchor = $('<a>').attr('href', 'mailto:'+email).html(email);
+
+        $(this).html(anchor);
+    });
+
+
+
+/* ---- Video Functionality ----- */
+    // Loop HTML5 video
+    $("#config-video").bind('ended', function(){ 
+      this.play();
+    });
+    
+
+    // Show overlay on hover
+    $("#config-video, #video-hover").on('mouseenter', function(){
+        $('#video-hover').height($("#config-video").height());
+        $('#video-hover').addClass("on");
+    });
+    $("#config-video, #video-hover").on('mouseleave', function(){ 
+        $('#video-hover').removeClass("on");
+    });
+    
+    // Starts video from the beginning each time modal is launched
+    $('#videoModal').on('show.bs.modal', function (e) {
+        $(this).find('iframe').attr('src', $(this).find('iframe').attr('src'));
+    })
+
+
+/* ---- Event tracking ----- */
     // Tracking downloads
     $('.intro-message a.download').on('click', function() {
         ga('send', 'event', 'button', 'download', 'header');
@@ -55,7 +88,7 @@ $( document ).ready(function() {
     });
 
 
-/** Slide show carousel **/
+/* ---- Slide show carousel ---- */
     /* copy loaded thumbnails into carousel */
 
     $('.gallery a[href="#"]').on('click', function(e){
@@ -68,11 +101,11 @@ $( document ).ready(function() {
 
         item.attr("title",title);
         $(itemDiv.html()).appendTo(item);
-        item.appendTo('.carousel-inner');
+        item.appendTo('#screenshotModal .carousel-inner');
 
         if (i==0){ // set first item active
-            $('.modal-title').html(item.attr("title"));
-            $('.modal-desc').html(item.find('img').attr("alt"));
+            $('#screenshotModal .modal-title').html(item.attr("title"));
+            $('#screenshotModal .modal-desc').html(item.find('img').attr("alt"));
             item.addClass('active');
         }
     });
@@ -82,15 +115,15 @@ $( document ).ready(function() {
 
     /* change modal title when slide changes */
     $('#modalCarousel').on('slid.bs.carousel', function () {
-      $('.modal-title').html($(this).find('.active').attr("title"));
-      $('.modal-desc').html($(this).find('.active').find('img').attr("alt"));
+      $('#screenshotModal .modal-title').html($(this).find('.active').attr("title"));
+      $('#screenshotModal .modal-desc').html($(this).find('.active').find('img').attr("alt"));
     })
 
     /* when clicking a thumbnail */
     $('.row .thumbnail').click(function(){
         var idx = $(this).parents('div').index();
         var id = parseInt(idx);
-        $('#myModal').modal('show'); // show the modal
+        $('#screenshotModal').modal('show'); // show the modal
         $('#modalCarousel').carousel(id); // slide carousel to selected
 
     });
@@ -98,7 +131,7 @@ $( document ).ready(function() {
 
 });
 
-
+/* Toggle mobile dropdown menu to close when link is clicked */
 $(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
         $(this).collapse('hide');
