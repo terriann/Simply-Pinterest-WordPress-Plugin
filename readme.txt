@@ -120,5 +120,10 @@ Initial release
 
 == Upgrade Notice ==
 
+= v1.2 =
+Update to get the latest settings including:
+
+* Preventing 0 from showing in the button counter
+
 = v1.1 =
 Update to the first public release of the Simply Pinterest plugin
