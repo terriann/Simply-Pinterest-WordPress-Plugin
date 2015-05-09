@@ -4,7 +4,7 @@ Donate link: http://terriswallow.com/
 Tags: pinterest, marketing, social media, button, click, hover, image, images, photo, photos, pin it, pinit, social
 Requires at least: 3.0.1
 Tested up to: 4.2.2
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,9 @@ When you upload an image through WordPress you are prompted to add a "descriptio
 7. Prevent all images on a specific page or post from being pinned by checking the "Disable Pin it Button" in the admin editor
 
 == Changelog ==
+
+= v1.2 =
+- Added option for disabling the count if there are 0 pins detected
 
 = v1.1 =
 First release version of the plugin in the WordPress Plugin Directory!
