@@ -1,3 +1,8 @@
+.spacer {
+    margin-top: 20px; /* define margin as you see fit */
+}
+
+
 .intro-message h1 {
     font-family: 'Pacifico', cursive;
     font-weight: normal;
