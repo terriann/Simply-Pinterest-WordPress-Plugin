@@ -69,29 +69,41 @@
             register_setting( 'bpp-settings-group', 'bpp_description_append', 'trim' );
             register_setting( 'bpp-settings-group', 'bpp_pagetype' );
             register_setting( 'bpp-settings-group', 'bpp_important' );
+
+            self::set_default_settings();
         }
 
-
-        public static function settings_default()
+        // These are all the default settings
+        public static function get_default_options()
         {
-            // Set default values
-            self::update_option('bpp_color', 'red');
-            self::update_option('bpp_onhover', 'false');
-            self::update_option('bpp_corner', 'northeast');
-            self::update_option('bpp_size', 20);
-            self::update_option('bpp_lang', 'en');
-            self::update_option('bpp_count', 'above');
-            self::update_option('bpp_load', 'async');
-            self::update_option('bpp_load_jq', '');
-            self::update_option('bpp_description_append', '');
-            self::update_option('bpp_pagetype', array('posts','pages','home','archives'));
-            self::update_option('bpp_important', '');
+            return array(
+                    'bpp_color' => 'red',
+                    'bpp_onhover' => 'false',
+                    'bpp_corner' => 'northeast',
+                    'bpp_size' => 20,
+                    'bpp_lang' => 'en',
+                    'bpp_count' => 'above',
+                    'bpp_load' => 'async',
+                    'bpp_load_jq' => '',
+                    'bpp_description_append' => '',
+                    'bpp_pagetype' => array('posts','pages','home','archives'),
+                    'bpp_important' => ''
+                );
+        }
+
+        public static function set_default_settings()
+        {
+            foreach (self::get_default_options() as $option => $default_value) {
+                if ( empty(get_option($option)) ) {
+                    self::update_option($option, $default_value);
+                }
+            }
         }
 
         public static function update_option($name, $value)
         {
             if (get_option($name) !== false) {
-                update_option( $name, $new_value );
+                update_option( $name, $value );
             } else {
                 add_option( $name, $value);
             }
