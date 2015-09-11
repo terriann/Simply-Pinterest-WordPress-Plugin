@@ -32,9 +32,6 @@ add_action('init', array( 'Simple_Pinterest_Plugin_Admin', 'init' ) );
 
 // When the plugin is activated, set defaults
 register_activation_hook( __FILE__, array( 'Simple_Pinterest_Plugin_Admin', 'settings_default' ) );
-// When the plugin is deactivated, remove options from database
-register_deactivation_hook( __FILE__, array( 'Simple_Pinterest_Plugin_Admin', 'settings_remove' ) );
-
 
 
 /* Combatting tinyMCE's hatreat of all things not typical
