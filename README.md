@@ -54,7 +54,8 @@ We would like to strive to support all the major plugins but the code should be 
 ##Not Compatible
 The Simple Pinterest Plugin is not compatible with some plugins by design. These plugins serve a completely different purpose while cluttering up the image. Inorder to avoid conflicts this plugin will be disabled if it detects the following plugins are active:
 
-* None at this time
+* [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) - Known bug when "Prevent caching of objects after settings change" option is checked the title of the page is used instead of the title of the image (as documented in [issue #25](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/25) If you uncheck that option it seems to work fine.  We will be looking into this in the future, follow [issue #25](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/25) for follow ups.
+* No others known conflicts at this time
 
 ##Goals
 
