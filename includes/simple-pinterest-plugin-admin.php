@@ -94,7 +94,8 @@
         public static function set_default_settings()
         {
             foreach (self::get_default_options() as $option => $default_value) {
-                if ( empty(get_option($option)) ) {
+                $option_current_value = get_option($option);
+                if ( empty($option_current_value) ) {
                     self::update_option($option, $default_value);
                 }
             }
