@@ -12,15 +12,13 @@ jQuery(document).ready(function() {
             bpp_size = $bpp_post.data('bpp-size'),
             bpp_lang = $bpp_post.data('bpp-lang'),
             bpp_count = $bpp_post.data('bpp-count'),
+            bpp_zero_count = $bpp_post.data('bpp-zero-count'),
             bpp_pinhover = $bpp_post.data('bpp-pinhover'),
             bpp_pincorner = $bpp_post.data('bpp-pincorner'),
             bpp_pinlink = $bpp_post.data('bpp-pinlink'),
             bpp_append = $bpp_post.data('bpp-append'),
             bpp_important = $bpp_post.data('bpp-important');
             bpp_mobile = $bpp_post.data('bpp-mobile');
-
-            konsole.log('bpp_mobile', bpp_mobile);
-
 
         bpp_append = (bpp_append && bpp_append.length > 0) ? ' ' + $bpp_post.data('bpp-append') : '';
 
@@ -58,9 +56,14 @@ jQuery(document).ready(function() {
                              .attr('href', bpp_href)
                              .attr('data-pin-do', 'buttonPin')
                              .attr('data-pin-config', bpp_count)
+                             .attr('data-pin-zero', 'false')
                              .attr('data-pin-height', bpp_size)
                              .attr('data-pin-lang', bpp_lang)
                              .attr('data-pin-color', bpp_color);
+
+            if(bpp_zero_count && bpp_count === "beside") {
+                bpp_anchor.attr('data-pin-zero', 'true');
+            }
 
             var bpp_button = jQuery('<img>').attr('src', '//assets.pinterest.com/images/pidgets/pinit_fg_'+bpp_lang+'_rect_'+bpp_color+'_'+bpp_size+'.png');
 
@@ -128,7 +131,7 @@ var konsole = {
 // Remove below here when in production
 if (typeof window.console != 'undefined' && typeof window.console.log == 'function') {
   konsole = window.console;
-  function a(a,b){var c='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 15px;'+(a?"font-weight: bold;":"")+"color: "+b+";";return c}konsole.log("%c♥web%c( function(){ %creturn true %c}); --> %ccontactMe()",a(!0,"#d22"),a(!0,"#777"),a(!0,"#2b2"),a(!0,"#777"),a(!0,"#2b2"));
+  function a(a,b){var c='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 15px;'+(a?"font-weight: bold;":"")+"color: "+b+";";return c}konsole.log("%cI♥web%c( function(){ %creturn true %c}); --> %ccontactMe()",a(!0,"#d22"),a(!0,"#777"),a(!0,"#2b2"),a(!0,"#777"),a(!0,"#2b2"));
   function contactMe(){ document.location.href = 'http://terriswallow.com' };
 }
 

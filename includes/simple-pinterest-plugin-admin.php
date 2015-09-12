@@ -64,6 +64,7 @@
             register_setting( 'bpp-settings-group', 'bpp_size', 'intval' );
             register_setting( 'bpp-settings-group', 'bpp_lang' );
             register_setting( 'bpp-settings-group', 'bpp_count' );
+            register_setting( 'bpp-settings-group', 'bpp_zero_count' );
             register_setting( 'bpp-settings-group', 'bpp_load' );
             register_setting( 'bpp-settings-group', 'bpp_load_jq' );
             register_setting( 'bpp-settings-group', 'bpp_description_append', 'trim' );
@@ -89,7 +90,8 @@
                     'bpp_description_append' => '',
                     'bpp_pagetype' => array('posts','pages','home','archives'),
                     'bpp_important' => 'false',
-                    'bpp_mobile' => 'false'
+                    'bpp_mobile' => 'false',
+                    'bpp_zero_count' => 'true',
                 );
         }
 
@@ -122,6 +124,7 @@
             delete_option('bpp_size');
             delete_option('bpp_lang');
             delete_option('bpp_count');
+            delete_option('bpp_zero_count');
             delete_option('bpp_load');
             delete_option('bpp_load_jq');
             delete_option('bpp_description_append');

@@ -101,13 +101,12 @@ It *should*. This plugin has been tested to work properly with the most popular 
 6. The Pin it button makes sure your post's permalink is pinned no matter what page it's pinned from and pre-populates the pin with the image that was selected and the "Title" or "Alt" text as set in the WordPress Admin.
 7. Prevent all images on a specific page or post from being pinned by checking the "Disable Pin it Button" in the admin editor
 
-[youtube https://www.youtube.com/watch?v=3NX6i3NHVao]
-
 == Changelog ==
 
 = v1.2 =
-* You can change your 0 count setting ([issue #16](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/17))
+* Added mobile friendly settings
 * Bug fixed for updating & setting required default settings
+* Default forces 0 count for the beside options for consitency
 * Setting are no longer removed when the plugin is deactivated but they are removed whent he plugin is uninstalled through the WordPress admin ([issue #24](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/24) and [issue #23](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/23))
 
 = v1.1 =
@@ -121,8 +120,10 @@ It *should*. This plugin has been tested to work properly with the most popular 
 
 == Upgrade Notice ==
 
+= v1.2 =
+Update to get the latest settings including:
+* New mobile settings
+* Squished some bugs
+
 = v1.1 =
 Update to the first public release of the Simply Pinterest plugin
-
-= v1.2 =
-Displaying counts but want to force hide/show of 0 pins? We have a new config for that and we squashed some bugs!

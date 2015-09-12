@@ -119,6 +119,7 @@
                     'data-bpp-pinhover' => esc_attr( get_option('bpp_onhover') ),
                     'data-bpp-lang' => esc_attr( get_option('bpp_lang') ),
                     'data-bpp-count' => esc_attr( get_option('bpp_count') ),
+                    'data-bpp-zero-count' => esc_attr( get_option('bpp_zero_count') ),
                     'data-bpp-size' => esc_attr( get_option('bpp_size') ),
                     'data-bpp-color' => esc_attr( get_option('bpp_color') ),
                     'data-bpp-append' => esc_attr( get_option('bpp_description_append') )

@@ -57,11 +57,6 @@ The Simple Pinterest Plugin is not compatible with some plugins by design. These
 * [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) - Known bug when "Prevent caching of objects after settings change" option is checked the title of the page is used instead of the title of the image (as documented in [issue #25](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/25) If you uncheck that option it seems to work fine.  We will be looking into this in the future, follow [issue #25](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/25) for follow ups.
 * No others known conflicts at this time
 
-##Goals
-
-* Run test with champion group April 2015 & collect feedback
-* Release plugin in Wordpress Plugins Directory by May 2015
-
 ##License
 
 Better Pinterest Plugin is free software, and is released under the terms of the [GPL version 2 license](http://www.gnu.org/licenses/gpl-2.0.html).

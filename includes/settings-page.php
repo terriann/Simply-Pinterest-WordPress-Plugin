@@ -54,11 +54,29 @@
                         <fieldset>
                             <legend class="screen-reader-text"><span>Pin it Button Count</span></legend>
                             <label title="Above the button"><input type="radio" name="bpp_count" value="above"<?php checked( 'above' == get_option('bpp_count') ); ?>> <span>Above the button</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28-above.png', BPP_PLUGIN_FILE ); ?>" /></label><br>
-                            <label title="Beside the button"><input type="radio" name="bpp_count" value="beside"<?php checked( 'beside' == get_option('bpp_count') ); ?>> <span>Beside the button (<em>If count is 0 no numbers show</em>)</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28-side.png', BPP_PLUGIN_FILE ); ?>" /></label><br>
+                            <label title="Beside the button"><input type="radio" name="bpp_count" value="beside"<?php checked( 'beside' == get_option('bpp_count') ); ?>> <span>Beside the button</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28-side.png', BPP_PLUGIN_FILE ); ?>" /></label><br>
                             <label title="None"><input type="radio" name="bpp_count" value="none"<?php checked( 'none' == get_option('bpp_count') ); ?>> <span>None</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28.png', BPP_PLUGIN_FILE ); ?>" /></label><br>
                         </fieldset>
                     </td>
                     </tr>
+<?php
+/*
+This doesn't worka s intended, waiting on response from Pinterest documented in my issue #17
+https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/17
+
+                    <tr valign="top">
+                    <th scope="row">Show 0 Count</th>
+                    <td>
+                        <p>If you are displaying the count, would you like the count to display 0 or hide the count bubble when the count is 0?</p>
+                        <fieldset>
+                            <legend class="screen-reader-text"><span>Pin it Button 0 Count</span></legend>
+                            <label title="Do Not Display 0 count"><input type="radio" name="bpp_zero_count" value="false"<?php checked( 'false' == get_option('bpp_zero_count') ); ?>> <span>Do not display 0 count</span></label><br>
+                            <label title="Beside the button"><input type="radio" name="bpp_zero_count" value="true"<?php checked( 'true' == get_option('bpp_zero_count') ); ?>> <span>Display 0 count</span></label><br>
+                        </fieldset>
+                    </td>
+                    </tr>
+*/
+?>
 
                     <tr valign="top">
                     <th scope="row">Hover Settings</th>
@@ -76,7 +94,7 @@
                     <td>
                         <fieldset>
                             <legend class="screen-reader-text"><span>Disable hover only Pin it button settings on mobile devides?</span></legend>
-                            <label title="Disable hover only on mobile"><input type="radio" name="bpp_mobile" value="true"<?php checked( 'true' === get_option('bpp_mobile') ); ?>> <span>Disable hover-only option when on mobile devices</span></label><br>
+                            <label title="Disable hover only on mobile"><input type="radio" name="bpp_mobile" value="true"<?php checked( 'true' === get_option('bpp_mobile') ); ?>> <span>Show Pin it button always on mobile devices instead of hover-only option</span></label><br>
                             <label title="Require tap (inplace of hover) to show pin button on mobile"><input type="radio" name="bpp_mobile" value="false"<?php checked( 'false' === get_option('bpp_mobile') ); ?>> <span>Require tap to show Pin it button on mobile devices in place of hover</span></label><br>
                         </fieldset>
                     </td>
@@ -114,9 +132,14 @@
                     </td>
                     </tr>
                 </table>
+
+
+                <?php submit_button(); ?>
+
+
                 <div class="note">
                     <h3>Advanced Settings</h3>
-
+                    <p>These advanced settings should not be changed unless you understand the implications or are instructed to change them through a support channel to debug a problem specific to your reported bug.</p>
                     <table class="form-table">
 
                         <tr valign="top">
