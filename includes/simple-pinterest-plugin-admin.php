@@ -69,6 +69,7 @@
             register_setting( 'bpp-settings-group', 'bpp_description_append', 'trim' );
             register_setting( 'bpp-settings-group', 'bpp_pagetype' );
             register_setting( 'bpp-settings-group', 'bpp_important' );
+            register_setting( 'bpp-settings-group', 'bpp_mobile' );
 
             self::set_default_settings();
         }
@@ -84,10 +85,11 @@
                     'bpp_lang' => 'en',
                     'bpp_count' => 'above',
                     'bpp_load' => 'async',
-                    'bpp_load_jq' => '',
+                    'bpp_load_jq' => 'false',
                     'bpp_description_append' => '',
                     'bpp_pagetype' => array('posts','pages','home','archives'),
-                    'bpp_important' => ''
+                    'bpp_important' => 'false',
+                    'bpp_mobile' => 'false'
                 );
         }
 
@@ -125,6 +127,7 @@
             delete_option('bpp_description_append');
             delete_option('bpp_pagetype');
             delete_option('bpp_important');
+            delete_option('bpp_mobile');
         }
 
         public static function settings_remove_deprecated()
@@ -140,7 +143,7 @@
          */
         public static  function create_settings_menu()
         {
-            add_submenu_page( 'options-general.php', 'Simply Pinterest Settings', 'Pinterest Settings', 'update_plugins', 'settings_spp', array( __CLASS__, 'settings_page' ) );
+            add_submenu_page( 'options-general.php', 'Simply Pinterest Settings', 'Pinterest Settings', 'update_plugins', 'spp_settings', array( __CLASS__, 'settings_page' ) );
         }
 
         public static function settings_page() {
@@ -152,7 +155,7 @@
         }
 
         public static function plugin_action_links( $links ) {
-           $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=settings_spp') .'">Settings</a>';
+           $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=spp_settings') .'">Settings</a>';
            $links[] = '<a href="https://github.com/terriann/simple-pinterest-plugin/wiki" target="_blank">Wiki</a>';
            return $links;
         }
