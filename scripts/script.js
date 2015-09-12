@@ -56,10 +56,14 @@ jQuery(document).ready(function() {
                              .attr('href', bpp_href)
                              .attr('data-pin-do', 'buttonPin')
                              .attr('data-pin-config', bpp_count)
-                             .attr('data-pin-zero', (bpp_zero_count)?'true':'false')
+                             .attr('data-pin-zero', 'false')
                              .attr('data-pin-height', bpp_size)
                              .attr('data-pin-lang', bpp_lang)
                              .attr('data-pin-color', bpp_color);
+
+            if(bpp_zero_count && bpp_count === "beside") {
+                bpp_anchor.attr('data-pin-zero', 'true');
+            }
 
             var bpp_button = jQuery('<img>').attr('src', '//assets.pinterest.com/images/pidgets/pinit_fg_'+bpp_lang+'_rect_'+bpp_color+'_'+bpp_size+'.png');
 
@@ -127,7 +131,7 @@ var konsole = {
 // Remove below here when in production
 if (typeof window.console != 'undefined' && typeof window.console.log == 'function') {
   konsole = window.console;
-  function a(a,b){var c='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 15px;'+(a?"font-weight: bold;":"")+"color: "+b+";";return c}konsole.log("%c♥web%c( function(){ %creturn true %c}); --> %ccontactMe()",a(!0,"#d22"),a(!0,"#777"),a(!0,"#2b2"),a(!0,"#777"),a(!0,"#2b2"));
+  function a(a,b){var c='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 15px;'+(a?"font-weight: bold;":"")+"color: "+b+";";return c}konsole.log("%cI♥web%c( function(){ %creturn true %c}); --> %ccontactMe()",a(!0,"#d22"),a(!0,"#777"),a(!0,"#2b2"),a(!0,"#777"),a(!0,"#2b2"));
   function contactMe(){ document.location.href = 'http://terriswallow.com' };
 }
 

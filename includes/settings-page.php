@@ -54,11 +54,15 @@
                         <fieldset>
                             <legend class="screen-reader-text"><span>Pin it Button Count</span></legend>
                             <label title="Above the button"><input type="radio" name="bpp_count" value="above"<?php checked( 'above' == get_option('bpp_count') ); ?>> <span>Above the button</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28-above.png', BPP_PLUGIN_FILE ); ?>" /></label><br>
-                            <label title="Beside the button"><input type="radio" name="bpp_count" value="beside"<?php checked( 'beside' == get_option('bpp_count') ); ?>> <span>Beside the button (<em>If count is 0 no numbers show</em>)</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28-side.png', BPP_PLUGIN_FILE ); ?>" /></label><br>
+                            <label title="Beside the button"><input type="radio" name="bpp_count" value="beside"<?php checked( 'beside' == get_option('bpp_count') ); ?>> <span>Beside the button</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28-side.png', BPP_PLUGIN_FILE ); ?>" /></label><br>
                             <label title="None"><input type="radio" name="bpp_count" value="none"<?php checked( 'none' == get_option('bpp_count') ); ?>> <span>None</span> <img src="<?php echo plugins_url( '/images/pinit_fg_en_rect_red_28.png', BPP_PLUGIN_FILE ); ?>" /></label><br>
                         </fieldset>
                     </td>
                     </tr>
+<?php
+/*
+This doesn't worka s intended, waiting on response from Pinterest documented in my issue #17
+https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/17
 
                     <tr valign="top">
                     <th scope="row">Show 0 Count</th>
@@ -71,6 +75,8 @@
                         </fieldset>
                     </td>
                     </tr>
+*/
+?>
 
                     <tr valign="top">
                     <th scope="row">Hover Settings</th>

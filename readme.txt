@@ -104,8 +104,9 @@ It *should*. This plugin has been tested to work properly with the most popular 
 == Changelog ==
 
 = v1.2 =
-* You can change your 0 count setting ([issue #16](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/17))
+* Added mobile friendly settings
 * Bug fixed for updating & setting required default settings
+* Default forces 0 count for the beside options for consitency
 * Setting are no longer removed when the plugin is deactivated but they are removed whent he plugin is uninstalled through the WordPress admin ([issue #24](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/24) and [issue #23](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/23))
 
 = v1.1 =
@@ -121,7 +122,6 @@ It *should*. This plugin has been tested to work properly with the most popular 
 
 = v1.2 =
 Update to get the latest settings including:
-* Preventing 0 from showing in the button counter
 * New mobile settings
 * Squished some bugs
 
