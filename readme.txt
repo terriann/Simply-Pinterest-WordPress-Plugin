@@ -1,14 +1,14 @@
 === Plugin Name ===
 Contributors: terriann
 Donate link: http://terriswallow.com/
-Tags: pinterest, marketing, social media, button, click, hover, image, images, photo, photos, pin it, pinit, social
+Tags: pinterest, marketing, social media, button, click, hover, image, images, photo, photos, pin it, pinit, social, pinnable
 Requires at least: 3.0.1
 Tested up to: 4.2.2
 Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically add a Pin It button on every image. No shortcodes necessary, this flexible plugin makes it easy for your visitors to share your content.
+Automatically add a Pin It button on every image in your posts. No shortcodes necessary, this flexible plugin makes it easy for your visitors to share your content.
 
 == Description ==
 
@@ -17,7 +17,7 @@ With Simply Pinterest make it easy and obvious your visitors should share your c
 This plugin adds a Pin It button call to action over your each image in your post to prompt visitors to Pin your content. The window to save your content to their board is in a pop-up so they never leave your site.
 The button uses the default Pinterest button that users identify with sharing their favorite content across the web. You can customize how the plugin is applied to your site with counts, colors & many other settings.
 
-You can see more, including a video trailor of the plugin at [SimplyPinterest.com](http://simplypinterest.com/)
+You can see more, including a video trailer of the plugin at [SimplyPinterest.com](http://simplypinterest.com/)
 
 = Battling Bad Source URLs =
 
@@ -45,9 +45,8 @@ If you're looking for an easy way to pin images in your blog posts and pages, th
 Here's a couple ideas that are being built/tested for future updates!
 
 * Setting improvments (lighter HTML, faster load time)
-* Disable 0 count
 * Common plugin and theme support
-* Additional setting adjustments for individual images.  I hear you love the defaults but sometimes there's a certain miage that needs it's own customization!
+* Additional setting adjustments for individual images.  I hear you love the defaults but sometimes there's a certain image that needs it's own customization!
 
 
 == Installation ==
@@ -66,7 +65,7 @@ Here's a couple ideas that are being built/tested for future updates!
 5. Click the "Install Now" button
 
 = Configuration =
-Once you install the Simply Pinterest plugin simply activate it in the WordPRess plugin page and go to `Settings > Pinterest Settings` to set your defaults!
+Once you install the Simply Pinterest plugin simply activate it in the WordPress plugin page and go to `Settings > Pinterest Settings` to set your defaults!
 
 [youtube https://www.youtube.com/watch?v=3NX6i3NHVao]
 
@@ -105,23 +104,26 @@ It *should*. This plugin has been tested to work properly with the most popular 
 == Changelog ==
 
 = v1.2 =
-- Added option for disabling the count if there are 0 pins detected
+* You can change your 0 count setting ([issue #16](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/17))
+* Bug fixed for updating & setting required default settings
+* Setting are no longer removed when the plugin is deactivated but they are removed whent he plugin is uninstalled through the WordPress admin ([issue #24](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/24) and [issue #23](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/23))
 
 = v1.1 =
-First release version of the plugin in the WordPress Plugin Directory!
+* First release version of the plugin in the WordPress Plugin Directory!
 
 = v1.0-rc.2 =
-Add configuration to use !important CSS when necessary due to conflicts with other plugins/themes
+* Add configuration to use !important CSS when necessary due to conflicts with other plugins/themes
 
 = v1.0-rc.1 =
-Initial release
+* Initial release
 
 == Upgrade Notice ==
 
 = v1.2 =
 Update to get the latest settings including:
-
 * Preventing 0 from showing in the button counter
+* New mobile settings
+* Squished some bugs
 
 = v1.1 =
 Update to the first public release of the Simply Pinterest plugin

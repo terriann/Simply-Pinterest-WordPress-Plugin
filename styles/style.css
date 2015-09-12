@@ -35,7 +35,7 @@
 .bpp_post_wrapper .bpp_img_wrapper.onhover .bpp_button_wrapper {
     display: none;
 }
-/* trigger showing on hover action */
+/* trigger showing on hover action  */
 .bpp_post_wrapper .bpp_img_wrapper.onhover:hover .bpp_button_wrapper {
     display: block;
 }
@@ -92,4 +92,15 @@
 .bpp_post_wrapper .bpp_img_wrapper.large.count_beside.northeast .bpp_button_wrapper,
 .bpp_post_wrapper .bpp_img_wrapper.large.count_beside.southeast .bpp_button_wrapper {
     right: 65px;
+}
+
+/** Media queries **/
+@media only screen and (max-device-width: 1024px) {
+
+    /* trigger showing on mobile by default  */
+    .bpp_post_wrapper .bpp_img_wrapper.mobile .bpp_button_wrapper,
+    .bpp_post_wrapper .bpp_img_wrapper.onhover.mobile .bpp_button_wrapper {
+        display: block;
+    }
+
 }

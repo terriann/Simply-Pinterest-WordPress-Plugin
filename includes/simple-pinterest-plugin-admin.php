@@ -70,30 +70,45 @@
             register_setting( 'bpp-settings-group', 'bpp_description_append', 'trim' );
             register_setting( 'bpp-settings-group', 'bpp_pagetype' );
             register_setting( 'bpp-settings-group', 'bpp_important' );
+            register_setting( 'bpp-settings-group', 'bpp_mobile' );
+
+            self::set_default_settings();
         }
 
-
-        public static function settings_default()
+        // These are all the default settings
+        public static function get_default_options()
         {
-            // Set default values
-            self::update_option('bpp_color', 'red');
-            self::update_option('bpp_onhover', 'false');
-            self::update_option('bpp_corner', 'northeast');
-            self::update_option('bpp_size', 20);
-            self::update_option('bpp_lang', 'en');
-            self::update_option('bpp_count', 'above');
-            self::update_option('bpp_zero_count', 'true');
-            self::update_option('bpp_load', 'async');
-            self::update_option('bpp_load_jq', '');
-            self::update_option('bpp_description_append', '');
-            self::update_option('bpp_pagetype', array('posts','pages','home','archives'));
-            self::update_option('bpp_important', '');
+            return array(
+                    'bpp_color' => 'red',
+                    'bpp_onhover' => 'false',
+                    'bpp_corner' => 'northeast',
+                    'bpp_size' => 20,
+                    'bpp_lang' => 'en',
+                    'bpp_count' => 'above',
+                    'bpp_load' => 'async',
+                    'bpp_load_jq' => 'false',
+                    'bpp_description_append' => '',
+                    'bpp_pagetype' => array('posts','pages','home','archives'),
+                    'bpp_important' => 'false',
+                    'bpp_mobile' => 'false',
+                    'bpp_zero_count' => 'true',
+                );
+        }
+
+        public static function set_default_settings()
+        {
+            foreach (self::get_default_options() as $option => $default_value) {
+                $option_current_value = get_option($option);
+                if ( empty($option_current_value) ) {
+                    self::update_option($option, $default_value);
+                }
+            }
         }
 
         public static function update_option($name, $value)
         {
             if (get_option($name) !== false) {
-                update_option( $name, $new_value );
+                update_option( $name, $value );
             } else {
                 add_option( $name, $value);
             }
@@ -115,6 +130,7 @@
             delete_option('bpp_description_append');
             delete_option('bpp_pagetype');
             delete_option('bpp_important');
+            delete_option('bpp_mobile');
         }
 
         public static function settings_remove_deprecated()
@@ -130,7 +146,7 @@
          */
         public static  function create_settings_menu()
         {
-            add_submenu_page( 'options-general.php', 'Simply Pinterest Settings', 'Pinterest Settings', 'update_plugins', 'settings_spp', array( __CLASS__, 'settings_page' ) );
+            add_submenu_page( 'options-general.php', 'Simply Pinterest Settings', 'Pinterest Settings', 'update_plugins', 'spp_settings', array( __CLASS__, 'settings_page' ) );
         }
 
         public static function settings_page() {
@@ -142,7 +158,7 @@
         }
 
         public static function plugin_action_links( $links ) {
-           $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=settings_spp') .'">Settings</a>';
+           $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=spp_settings') .'">Settings</a>';
            $links[] = '<a href="https://github.com/terriann/simple-pinterest-plugin/wiki" target="_blank">Wiki</a>';
            return $links;
         }
