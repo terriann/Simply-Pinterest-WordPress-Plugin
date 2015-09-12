@@ -17,6 +17,9 @@ jQuery(document).ready(function() {
             bpp_pinlink = $bpp_post.data('bpp-pinlink'),
             bpp_append = $bpp_post.data('bpp-append'),
             bpp_important = $bpp_post.data('bpp-important');
+            bpp_mobile = $bpp_post.data('bpp-mobile');
+
+            konsole.log('bpp_mobile', bpp_mobile);
 
 
         bpp_append = (bpp_append && bpp_append.length > 0) ? ' ' + $bpp_post.data('bpp-append') : '';
@@ -72,6 +75,10 @@ jQuery(document).ready(function() {
             if( (bpp_pinhover == true && _i_bpp_pinhover != 'always')
                 || _i_bpp_pinhover == 'onhover') {
                 bpp_img_wrap_class += " onhover";
+            }
+            // set the corner the pin belongs
+            if(bpp_mobile) {
+                bpp_img_wrap_class += " mobile";
             }
             // set the corner the pin belongs
             if(bpp_pincorner) {

@@ -128,6 +128,10 @@
                 $attr_set['data-bpp-important'] = '1';
             }
 
+            if('true' == get_option('bpp_mobile')) {
+                $attr_set['data-bpp-mobile'] = '1';
+            }
+
             $attributes = array();
 
             foreach($attr_set as $attr => $value) {
