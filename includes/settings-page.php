@@ -65,8 +65,19 @@
                     <td>
                         <fieldset>
                             <legend class="screen-reader-text"><span>Pin it Button Hover Settings</span></legend>
-                            <label title="Show on Hover Only"><input type="radio" name="bpp_onhover" value="true"<?php checked( 'true' == get_option('bpp_onhover') ); ?>> <span>Only show Pin it button on hover/mouseover</span></label><br>
-                            <label title="Always Show Pin"><input type="radio" name="bpp_onhover" value="false"<?php checked( 'false' == get_option('bpp_onhover') ); ?>> <span>Always show pin it button</span></label><br>
+                            <label title="Show on Hover Only"><input type="radio" name="bpp_onhover" value="true"<?php checked( 'true' === get_option('bpp_onhover') ); ?>> <span>Only show Pin it button on hover/mouseover</span></label><br>
+                            <label title="Always Show Pin"><input type="radio" name="bpp_onhover" value="false"<?php checked( 'false' === get_option('bpp_onhover') ); ?>> <span>Always show pin it button</span></label><br>
+                        </fieldset>
+                    </td>
+                    </tr>
+
+                    <tr valign="top">
+                    <th scope="row">Mobile Settings</th>
+                    <td>
+                        <fieldset>
+                            <legend class="screen-reader-text"><span>Disable hover only Pin it button settings on mobile devides?</span></legend>
+                            <label title="Disable hover only on mobile"><input type="radio" name="bpp_mobile" value="true"<?php checked( 'true' === get_option('bpp_mobile') ); ?>> <span>Disable hover-only option when on mobile devices</span></label><br>
+                            <label title="Require tap (inplace of hover) to show pin button on mobile"><input type="radio" name="bpp_mobile" value="false"<?php checked( 'false' === get_option('bpp_mobile') ); ?>> <span>Require tap to show Pin it button on mobile devices in place of hover</span></label><br>
                         </fieldset>
                     </td>
                     </tr>
