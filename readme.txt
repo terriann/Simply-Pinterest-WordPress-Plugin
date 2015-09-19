@@ -106,8 +106,8 @@ It *should*. This plugin has been tested to work properly with the most popular 
 = v1.2 =
 * Added mobile friendly settings
 * Bug fixed for updating & setting required default settings
-* Default forces 0 count for the beside options for consitency
-* Setting are no longer removed when the plugin is deactivated but they are removed whent he plugin is uninstalled through the WordPress admin ([issue #24](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/24) and [issue #23](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/23))
+* Default forces 0 count for the beside options for consistency
+* Setting are no longer removed when the plugin is deactivated but they are removed when the plugin is uninstalled through the WordPress admin ([issue #24](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/24) and [issue #23](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/23))
 
 = v1.1 =
 * First release version of the plugin in the WordPress Plugin Directory!
