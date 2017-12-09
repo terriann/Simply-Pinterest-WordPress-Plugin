@@ -18,7 +18,7 @@ require_once __DIR__ . '/includes/simple-pinterest-base.php';
 /**
  * Load & activate front end manipulation for front end facing site only
  */
-require_once __DIR__ . '/includes/simple-pinterest-plugin.php';
+require_once __DIR__ . '/includes/class-simple-pinterest-plugin.php';
 add_action( 'init', array( 'Simple_Pinterest_Plugin', 'init' ) );
 
 /**
