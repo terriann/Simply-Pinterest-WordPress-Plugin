@@ -7,7 +7,7 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 define('BPP_PLUGIN_FILE', __FILE__);
 
 require_once( dirname(__FILE__) . '/includes/simple-pinterest-base.php' );
-require_once( dirname(__FILE__) . '/includes/simple-pinterest-plugin-admin.php' );
+require_once( dirname(__FILE__) . '/includes/class-simple-pinterest-plugin-admin.php' );
 
 // When the plugin is uninstalled, remove options from database
 

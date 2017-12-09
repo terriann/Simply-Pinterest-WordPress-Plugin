@@ -61,7 +61,7 @@
                     </tr>
 <?php
 /*
-This doesn't worka s intended, waiting on response from Pinterest documented in my issue #17
+This doesn't work as intended, waiting on response from Pinterest documented in my issue #17
 https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/17
 
                     <tr valign="top">

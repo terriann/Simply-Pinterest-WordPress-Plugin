@@ -8,7 +8,7 @@
  * Author URI: http://terriswallow.com/
  * License: GPLv2
  *
- * @package simplypinterest
+ * @package SimplyPinterest
  */
 
 define( 'BPP_PLUGIN_FILE', __FILE__ );
@@ -24,7 +24,7 @@ add_action( 'init', array( 'Simple_Pinterest_Plugin', 'init' ) );
 /**
  * Load & activate admin manipulation for admin site only
  */
-require_once __DIR__ . '/includes/simple-pinterest-plugin-admin.php';
+require_once __DIR__ . '/includes/class-simple-pinterest-plugin-admin.php';
 add_action( 'admin_init', array( 'Simple_Pinterest_Plugin_Admin', 'admin_init' ) );
 add_action( 'init', array( 'Simple_Pinterest_Plugin_Admin', 'init' ) );
 

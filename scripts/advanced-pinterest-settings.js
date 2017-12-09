@@ -1,5 +1,5 @@
 /*
-This is the part of the script that is used in the editor for advanced pinterest settings
+ * This is the part of the script that is used in the editor for advanced pinterest settings.
  */
 
 (function( $, wp, _ ) {
