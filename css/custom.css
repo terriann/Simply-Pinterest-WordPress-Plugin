@@ -1,7 +1,6 @@
 .spacer {
-    margin-top: 20px; /* define margin as you see fit */
+    margin-top: 20px;
 }
-
 
 .intro-message h1 {
     font-family: 'Pacifico', cursive;
@@ -26,7 +25,6 @@
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
 
-
 .navbar-default .navbar-brand {
     font-size:21px;
     color: #3CB9C2;
@@ -41,7 +39,6 @@
     -o-transform: rotate(340deg);
     -ms-transform: rotate(340deg);
 }
-
 
 p {
     font-weight: normal;
@@ -66,8 +63,6 @@ ul li {
 ol, ul {
     margin-bottom:30px;
 }
-
-
 
 .btn-spp {
   color: #fff;
@@ -115,14 +110,11 @@ fieldset[disabled] .btn-spp.active {
   background-color: #fff;
 }
 
-
 .img-circle {
     position: relative;
     border-radius: 50%;
     background: white;
     }
-
-
 
 .modal-dialog {}
 .thumbnail {margin-bottom:6px;}
@@ -131,19 +123,18 @@ fieldset[disabled] .btn-spp.active {
   background-image:none;
 }
 
-
 #config-video {
     position: absolute;
     top: 7.3%;
-    left: 14.3%;
-    width: 72%;
+    left: 13.4%;
+    width: 73%;
 }
 
 #video-hover {
     position: absolute;
     top: 7.3%;
-    left: 14.3%;
-    width: 72%;
+    left: 13.4%;
+    width: 73%;
     background-color:rgba(0,0,0,0.4);
     opacity: 0;
     -webkit-transition: .6s;
@@ -186,6 +177,9 @@ fieldset[disabled] .btn-spp.active {
     margin-top:15px;
 }
 
+.list-inline > li:last-child {
+    margin-top: 10px;
+}
 
 @media (min-width: 768px) {
 }
