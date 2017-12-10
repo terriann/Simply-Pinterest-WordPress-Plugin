@@ -61,6 +61,12 @@ The Simple Pinterest Plugin is not compatible with some plugins by design. These
 
 Better Pinterest Plugin is free software, and is released under the terms of the [GPL version 2 license](http://www.gnu.org/licenses/gpl-2.0.html).
 
+## Repo Setup
+
+Use this symlink to add extra assets to directory
+
+  ln -s ~/Dropbox/Sites/assets-symlinks/simply-pinterest/ ./~extras
+
 ## Release Notes & FAQ
 
 Release notes and FAQs are availiable in the `readme.txt` (used by WordPress's plugin repo)
