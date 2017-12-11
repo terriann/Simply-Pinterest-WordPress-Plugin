@@ -2,9 +2,9 @@
 Contributors: terriann
 Donate link: http://terriswallow.com/
 Tags: pinterest, marketing, social media, button, click, hover, image, images, photo, photos, pin it, pinit, social, pinnable
-Requires at least: 3.0.1
-Tested up to: 4.3
-Stable tag: 1.2
+Requires at least: 4.9
+Tested up to: 4.9.1
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,24 +72,27 @@ Once you install the Simply Pinterest plugin simply activate it in the WordPress
 
 == Frequently Asked Questions ==
 
-= Can I Customize the Button With a Different Graphic? =
+= Can I customize the button with a different graphic? =
 
 No, to keep the plugin light and easy to use we only support the default Pinterest branded buttons. Pinterest has put their design resources into what works well to get users to click that "Pin It" button and it really stands out to the user that they should pin the great images you have in your post to come back to your content and share it with their followers.
 
 If you want a more subtle appraoch try setting the button to only show on hover and have it permenantly display on the most Pinnable buttons!
 
-= How can I change the Pinterst Description =
+= How can I change the Pinterst description? =
 
 When you upload an image through WordPress you are prompted to add a "description" in the media upload window. That is that text this plugin uses to pre-fill the pin's description
 
-= I found a bug! What Do I Do Now? =
+= I found a bug! What should I do? =
 
 File an issue in the [GitHub repo](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/) or leave a comment in the [WordPress plugin support forum](https://wordpress.org/support/plugin/simply-pinterest).  You can also email me at  [terriann@simplypinterest.com](mailto:terriann@simplypinterest.com).
 
 If you're technically inclined I also accept pull requests through GitHub, just file an issue first so I know what you're proposing!
 
 = Will it Work with my Theme and Plugins? =
-It *should*. This plugin has been tested to work properly with the most popular themes, twenty fourteen, twnety fifteen, Genesis, Thesis. As well as other popular plugins. I cannot support every plugin and every theme but if you run into any isses please contact me and I'll work with you to help resolve any bugs in this plugin.
+It *should*. This plugin has been tested to work properly with the most popular themes, twenty fourteen, twnety fifteen, Genesis, Thesis. As well as other popular plugins. I cannot support every plugin and every theme but I will try to support the most common cases.
+
+= I'm running a version of WordPress older than what this plugin supports, can I still use this plugin? =
+This plugin may work on older versions of WordPress but each time this plugin gets updated it will only be tested against the most current major version of WordPress. You should be in the habit of updating your WordPress version to make sure you have the latest security patches.
 
 == Screenshots ==
 
@@ -102,6 +105,9 @@ It *should*. This plugin has been tested to work properly with the most popular 
 7. Prevent all images on a specific page or post from being pinned by checking the "Disable Pin it Button" in the admin editor
 
 == Changelog ==
+
+= v1.2.1 =
+* Refactored code for easier maintenance moving forward ([issue #36](https://github.com/terriann/Simply-Pinterest-WordPress-Plugin/issues/36)
 
 = v1.2 =
 * Added mobile friendly settings
